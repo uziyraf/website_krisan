@@ -601,13 +601,6 @@ body {
     border-radius: 10px;
 }
 
-
-
-
-
-
-
-
 .massage {
     min-height: 120vh;
     background-color: cornsilk;
@@ -625,6 +618,708 @@ body {
     margin: 0;
 }
 
+/*halaman flower-list*/
+
+/* Container halaman flower-list */
+.flower-list-page {
+  padding-top: 80px;
+  background: #FBF3E2;
+  min-height: 100vh;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+
+/* Section judul dan deskripsi */
+.section {
+  margin: 100px auto 40px auto;
+  text-align: center;
+  max-width: 700px;
+  padding: 0 16px;
+}
+
+.heading-2-a-summer-to-grow-explore3 {
+  color: #2c5747;
+  font-family: "Alegreya-Medium", sans-serif;
+  font-size: 48px;
+  line-height: 1.1;
+  font-weight: 500;
+  margin-bottom: 18px;
+  text-align: center;
+  width: 100%;
+}
+
+.desa-tutur-kabupaten-pasuruan2 {
+  color: #000;
+  font-family: "DmSans-9PtRegular", sans-serif;
+  font-size: 26px;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-bottom: 18px;
+  text-align: center;
+  width: 100%;
+}
+
+.link7 {
+  background: #2c5747;
+  border-radius: 6px;
+  width: 270px;
+  margin: 0 auto 18px auto;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 8px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.explore-our-flower {
+  color: #fff;
+  font-family: "DmSans-Bold", sans-serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.bunga-krisan-12 {
+  width: 121px;
+  height: 106px;
+  object-fit: cover;
+  aspect-ratio: 121/106;
+  margin: 18px auto 0 auto;
+  display: block;
+}
+
+/* Card */
+/* Grid Card Flower */
+.flower-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin: 48px auto;
+  max-width: 1200px;
+}
+
+/* Card */
+.card {
+  background: #fff;
+  border-radius: 40px;
+  border: 1px solid rgba(0,0,0,0);
+  box-shadow: 4px 4px 50px 0px rgba(0,0,0,0.15);
+  width: 350px;
+  margin: 0;
+  padding: 32px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Responsive: 1 card per row on mobile */
+@media (max-width: 900px) {
+  .flower-card-grid {
+    gap: 18px;
+    max-width: 98vw;
+  }
+  .card {
+    width: 98vw;
+    max-width: 400px;
+  }
+}
+
+.rectangle-2 {
+  width: 90%;
+  max-width: 320px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 24px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 16px rgba(44,87,71,0.10);
+}
+
+.heading-2-a-summer-to-grow-explore {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2C5747;
+  margin-bottom: 12px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.bunga-krisan-atau-seruni-adalah-simbol-keanggunan-klasik-dengan-ratusan-kelopak-yang-tersusun-rimbun-dan-sempurna-bunga-ini-memancarkan-pesona-yang-tak-lekang-oleh-waktu {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 18px;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.button-lihat-detail {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.heading-2-a-summer-to-grow-explore2 {
+  background: #2C5747;
+  color: #fff;
+  padding: 10px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: 'DM Sans', sans-serif;
+  box-shadow: 0 2px 8px rgba(44,87,71,0.08);
+}
+
+.heading-2-a-summer-to-grow-explore2:hover {
+  background: #1e3d2e;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .section {
+    margin: 60px auto 24px auto;
+    padding: 0 8px;
+  }
+  .card {
+    width: 98vw;
+    padding: 18px 8px;
+    border-radius: 24px;
+  }
+  .rectangle-2 {
+    height: 140px;
+    border-radius: 16px;
+  }
+}
+
+/*FOOTER*/
+.footer,
+.footer * {
+  box-sizing: border-box;
+}
+.footer {
+  height: 602px;
+  position: relative;
+  overflow: hidden;
+}
+.figure-svg {
+  width: 1440px;
+  height: 81px;
+  position: absolute;
+  left: 232.5px;
+  top: 0px;
+}
+.group {
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0.01px;
+  overflow: visible;
+}
+.background {
+  background: #2c5747;
+  height: 467px;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  top: 70px;
+}
+.heading-4-get-updates {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Alegreya-Medium", sans-serif;
+  font-size: 32px;
+  line-height: 32px;
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 167px;
+  width: 160.34px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.krisan-tutur-mekar-lebih-lama-indah-sepanjang-masa {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Alegreya-Italic", sans-serif;
+  font-size: 21px;
+  line-height: 24px;
+  letter-spacing: -0.2px;
+  font-weight: 400;
+  font-style: italic;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: 242px;
+  width: 330.1px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vertical-divider {
+  background: #0d1a15;
+  width: 1px;
+  position: absolute;
+  left: 682.5px;
+  bottom: 63px;
+  top: 75px;
+}
+.vertical-divider2 {
+  background: #0d1a15;
+  width: 1px;
+  position: absolute;
+  right: 682.5px;
+  bottom: 63px;
+  top: 75px;
+}
+.container {
+  position: absolute;
+  right: 1237.5px;
+  left: 382.5px;
+  bottom: 46px;
+  top: 72px;
+}
+.nav-list {
+  height: 222px;
+  position: absolute;
+  right: 15px;
+  left: 15px;
+  top: 0px;
+}
+.item-link {
+  width: 71.61px;
+  height: 18px;
+  position: absolute;
+  left: 0px;
+  top: 9px;
+}
+.about-us {
+  color: #ffffff;
+  text-align: left;
+  font-family: "DmSans-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  position: absolute;
+  left: 0px;
+  top: -2px;
+  width: 71.92px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.item-link2 {
+  width: 74.5px;
+  height: 18px;
+  position: absolute;
+  left: 0px;
+  top: 47px;
+}
+.bunga {
+  color: #ffffff;
+  text-align: left;
+  font-family: "DmSans-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  position: absolute;
+  left: 0px;
+  top: -2px;
+  width: 74.81px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.item-link3 {
+  width: 52.95px;
+  height: 18px;
+  position: absolute;
+  left: 0px;
+  top: 85px;
+}
+.marketplace {
+  color: #ffffff;
+  text-align: left;
+  font-family: "DmSans-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  position: absolute;
+  left: -0.5px;
+  top: -2px;
+  width: 115px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.item-link4 {
+  width: 33.27px;
+  height: 18px;
+  position: absolute;
+  left: 0px;
+  top: 123px;
+}
+.gallery {
+  color: #ffffff;
+  text-align: left;
+  font-family: "DmSans-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  position: absolute;
+  left: 0.5px;
+  top: -2px;
+  width: 97px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.item-link5 {
+  width: 111.36px;
+  height: 18px;
+  position: absolute;
+  left: 0px;
+  top: 161px;
+}
+.join-our-team {
+  color: #ffffff;
+  text-align: left;
+  font-family: "DmSans-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  position: absolute;
+  left: 0px;
+  top: -2px;
+  width: 111.73px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.item-link6 {
+  width: 56.59px;
+  height: 18px;
+  position: absolute;
+  left: 0px;
+  top: 199px;
+}
+.list {
+  height: 44px;
+  position: absolute;
+  right: 15px;
+  left: 15px;
+  top: 258px;
+}
+.item-link7 {
+  border-radius: 18.5px;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 2px;
+  width: 37px;
+  height: 37px;
+  position: absolute;
+  left: calc(50% - 128px);
+  top: calc(50% - 22px);
+}
+.svg {
+  position: absolute;
+  right: 2px;
+  left: 2px;
+  bottom: 2px;
+  top: 2px;
+}
+.group2 {
+  height: auto;
+  position: absolute;
+  left: 12.34px;
+  top: 8.18px;
+  overflow: visible;
+}
+.item-link8 {
+  border-radius: 18.5px;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 2px;
+  width: 37px;
+  height: 37px;
+  position: absolute;
+  left: calc(50% - 81.41px);
+  top: calc(50% - 22px);
+}
+.group3 {
+  height: auto;
+  position: absolute;
+  left: 8.49px;
+  top: 8.49px;
+  overflow: visible;
+}
+.list2 {
+  height: 262px;
+  position: absolute;
+  right: 397.5px;
+  left: 1252.5px;
+  top: 72px;
+}
+.item-link9 {
+  width: 181.83px;
+  height: 24px;
+  position: absolute;
+  right: 0px;
+  top: 7px;
+}
+.send-us-a-message {
+  color: #ffffff;
+  text-align: right;
+  font-family: "DmSans-Bold", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 700;
+  position: absolute;
+  right: 30.68px;
+  top: 1px;
+  width: 151.15px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.svg2 {
+  width: 19px;
+  height: 12px;
+  position: absolute;
+  left: 159.83px;
+  top: 6px;
+}
+.group4 {
+  height: auto;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  overflow: visible;
+}
+.horizontal-divider {
+  background: #ffffff;
+  height: 2px;
+  position: absolute;
+  right: 3px;
+  left: 159.8300018310547px;
+  top: 50%;
+  translate: 0 -50%;
+}
+.item-link10 {
+  width: 116.11px;
+  height: 24px;
+  position: absolute;
+  right: 0px;
+  top: 76px;
+}
+._845-356-1234 {
+  color: #ffffff;
+  text-align: right;
+  font-family: "DmSans-9PtRegular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: absolute;
+  right: -0.38px;
+  top: 1px;
+  width: 116.49px;
+  height: 21px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.item-link11 {
+  width: 235px;
+  height: 48px;
+  position: absolute;
+  right: 0px;
+  top: 125px;
+}
+.desa-tutur-kabupaten-pasuruan {
+  color: #ffffff;
+  text-align: right;
+  font-family: "DmSans-9PtRegular", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  position: absolute;
+  right: -0.2px;
+  top: 1px;
+  width: 188.31px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.item-link12 {
+  width: 80px;
+  height: 40px;
+  position: absolute;
+  right: 0px;
+  top: 213px;
+}
+.background2 {
+  background: #274d3e;
+  height: 65px;
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  top: 537px;
+}
+._2025-kampung-bunga-krisan-all-rights-reserved {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  position: absolute;
+  left: 397.5px;
+  top: 26px;
+  width: 314.8px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.nav-list-item-link {
+  width: 74.95px;
+  height: 17px;
+  position: absolute;
+  right: 417.5px;
+  top: 26px;
+}
+.privacy-policy {
+  color: rgba(255, 255, 255, 0.8);
+  text-align: right;
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  position: absolute;
+  right: -0.32px;
+  top: 0px;
+  width: 75.27px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Pop Up Overlay */
+/* Pop Up Content Flex */
+.popup-content-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin: 80px 32px 32px 32px;
+}
+
+/* Gambar di pop up */
+.pop-up {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(44,87,71,0.45);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px); /* efek blur */
+}
+
+.rectangle-5 {
+  width: 180px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 18px;
+  flex-shrink: 0;
+}
+
+/* Deskripsi di pop up */
+.temukan-pesona-abadi-dari-bunga-krisan {
+  font-size: 1rem;
+  color: #444;
+  text-align: left;
+  line-height: 1.6;
+  font-family: 'DM Sans', sans-serif;
+  max-width: 320px;
+  word-break: break-word;
+}
+
+/* Rectangle-4 mengikuti konten */
+.rectangle-4 {
+  background: #fff;
+  border-radius: 32px;
+  box-shadow: 0 8px 40px rgba(44,87,71,0.18);
+  min-width: 320px;
+  max-width: 700px;
+  width: fit-content;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+  margin: auto;
+}
+
+/* Heading dan tombol X */
+.heading-2-a-summer-to-grow-explore {
+  font-size: 2rem;
+  color: #2C5747;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.x-circle {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .popup-content-flex {
+    flex-direction: column;
+    align-items: center;
+    margin: 32px 8px 8px 8px;
+    gap: 12px;
+  }
+  .rectangle-5 {
+    width: 90vw;
+    max-width: 300px;
+  }
+  .temukan-pesona-abadi-dari-bunga-krisan {
+    max-width: 90vw;
+    font-size: 0.95rem;
+  }
+  .rectangle-4 {
+    min-width: 0;
+    max-width: 98vw;
+    width: 98vw;
+    padding-bottom: 18px;
+  }
+}
 
 
 /* Footer */

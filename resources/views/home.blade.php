@@ -21,9 +21,9 @@
     <!-- Navbar -->
     <header class="navbar">
         <nav>
-            <a href="#home">Home</a>
+            <a href="{{ url('/') }}">Home</a>
             <a href="#about">About</a>
-            <a href="#flower">Flower</a>
+            <a href="{{ url('/flower-list') }}">Flower</a>
             <a href="#marketplace">Marketplace</a>
             <a href="#gallery">Gallery</a>
         </nav>
