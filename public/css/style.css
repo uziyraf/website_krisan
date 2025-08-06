@@ -742,10 +742,12 @@ body {
   font-size: 2rem;
   font-weight: bold;
   color: #2C5747;
+  margin-top: 32px;
   margin-bottom: 12px;
   text-align: center;
   font-family: 'Playfair Display', serif;
 }
+
 
 .bunga-krisan-atau-seruni-adalah-simbol-keanggunan-klasik-dengan-ratusan-kelopak-yang-tersusun-rimbun-dan-sempurna-bunga-ini-memancarkan-pesona-yang-tak-lekang-oleh-waktu {
   font-size: 1rem;
@@ -798,427 +800,91 @@ body {
 }
 
 /*FOOTER*/
-.footer,
-.footer * {
-  box-sizing: border-box;
+/* Ubah .footer jadi flex column */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
+
 .footer {
-  height: 602px;
-  position: relative;
-  overflow: hidden;
+  background-color: #2e5747;
+  color: #fff;
+  padding: 3rem 2rem 1rem;
+  font-family: sans-serif;
 }
-.figure-svg {
-  width: 1440px;
-  height: 81px;
-  position: absolute;
-  left: 232.5px;
-  top: 0px;
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 2rem;
 }
-.group {
-  height: auto;
-  position: absolute;
-  left: 0px;
-  top: 0.01px;
-  overflow: visible;
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
 }
-.background {
-  background: #2c5747;
-  height: 467px;
-  position: absolute;
-  right: 0px;
-  left: 0px;
-  top: 70px;
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
 }
-.heading-4-get-updates {
-  color: #ffffff;
+
+.footer-column ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-column.center {
   text-align: center;
-  font-family: "Alegreya-Medium", sans-serif;
-  font-size: 32px;
-  line-height: 32px;
-  font-weight: 500;
-  position: absolute;
-  left: 50%;
-  translate: -50%;
-  top: 167px;
-  width: 160.34px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.krisan-tutur-mekar-lebih-lama-indah-sepanjang-masa {
-  color: #ffffff;
-  text-align: center;
-  font-family: "Alegreya-Italic", sans-serif;
-  font-size: 21px;
-  line-height: 24px;
-  letter-spacing: -0.2px;
-  font-weight: 400;
-  font-style: italic;
-  position: absolute;
-  left: 50%;
-  translate: -50%;
-  top: 242px;
-  width: 330.1px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+.footer-column.center h2 {
+  margin-bottom: 0.5rem;
 }
-.vertical-divider {
-  background: #0d1a15;
+
+.footer-column.right h4 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.footer-divider {
   width: 1px;
-  position: absolute;
-  left: 682.5px;
-  bottom: 63px;
-  top: 75px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 0 1rem;
 }
-.vertical-divider2 {
-  background: #0d1a15;
-  width: 1px;
-  position: absolute;
-  right: 682.5px;
-  bottom: 63px;
-  top: 75px;
+
+.social-icons a {
+  margin-right: 1rem;
+  color: #fff;
+  font-size: 1.2rem;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 0.4rem 0.6rem;
+  display: inline-block;
 }
-.container {
-  position: absolute;
-  right: 1237.5px;
-  left: 382.5px;
-  bottom: 46px;
-  top: 72px;
-}
-.nav-list {
-  height: 222px;
-  position: absolute;
-  right: 15px;
-  left: 15px;
-  top: 0px;
-}
-.item-link {
-  width: 71.61px;
-  height: 18px;
-  position: absolute;
-  left: 0px;
-  top: 9px;
-}
-.about-us {
-  color: #ffffff;
-  text-align: left;
-  font-family: "DmSans-Bold", sans-serif;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 700;
-  position: absolute;
-  left: 0px;
-  top: -2px;
-  width: 71.92px;
-  height: 21px;
+
+.footer-bottom {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
+  font-size: 0.85rem;
+  padding-top: 1rem;
 }
-.item-link2 {
-  width: 74.5px;
-  height: 18px;
-  position: absolute;
-  left: 0px;
-  top: 47px;
-}
-.bunga {
-  color: #ffffff;
-  text-align: left;
-  font-family: "DmSans-Bold", sans-serif;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 700;
-  position: absolute;
-  left: 0px;
-  top: -2px;
-  width: 74.81px;
-  height: 21px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.item-link3 {
-  width: 52.95px;
-  height: 18px;
-  position: absolute;
-  left: 0px;
-  top: 85px;
-}
-.marketplace {
-  color: #ffffff;
-  text-align: left;
-  font-family: "DmSans-Bold", sans-serif;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 700;
-  position: absolute;
-  left: -0.5px;
-  top: -2px;
-  width: 115px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.item-link4 {
-  width: 33.27px;
-  height: 18px;
-  position: absolute;
-  left: 0px;
-  top: 123px;
-}
-.gallery {
-  color: #ffffff;
-  text-align: left;
-  font-family: "DmSans-Bold", sans-serif;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 700;
-  position: absolute;
-  left: 0.5px;
-  top: -2px;
-  width: 97px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.item-link5 {
-  width: 111.36px;
-  height: 18px;
-  position: absolute;
-  left: 0px;
-  top: 161px;
-}
-.join-our-team {
-  color: #ffffff;
-  text-align: left;
-  font-family: "DmSans-Bold", sans-serif;
-  font-size: 16px;
-  line-height: 18px;
-  font-weight: 700;
-  position: absolute;
-  left: 0px;
-  top: -2px;
-  width: 111.73px;
-  height: 21px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.item-link6 {
-  width: 56.59px;
-  height: 18px;
-  position: absolute;
-  left: 0px;
-  top: 199px;
-}
-.list {
-  height: 44px;
-  position: absolute;
-  right: 15px;
-  left: 15px;
-  top: 258px;
-}
-.item-link7 {
-  border-radius: 18.5px;
-  border-style: solid;
-  border-color: #ffffff;
-  border-width: 2px;
-  width: 37px;
-  height: 37px;
-  position: absolute;
-  left: calc(50% - 128px);
-  top: calc(50% - 22px);
-}
-.svg {
-  position: absolute;
-  right: 2px;
-  left: 2px;
-  bottom: 2px;
-  top: 2px;
-}
-.group2 {
-  height: auto;
-  position: absolute;
-  left: 12.34px;
-  top: 8.18px;
-  overflow: visible;
-}
-.item-link8 {
-  border-radius: 18.5px;
-  border-style: solid;
-  border-color: #ffffff;
-  border-width: 2px;
-  width: 37px;
-  height: 37px;
-  position: absolute;
-  left: calc(50% - 81.41px);
-  top: calc(50% - 22px);
-}
-.group3 {
-  height: auto;
-  position: absolute;
-  left: 8.49px;
-  top: 8.49px;
-  overflow: visible;
-}
-.list2 {
-  height: 262px;
-  position: absolute;
-  right: 397.5px;
-  left: 1252.5px;
-  top: 72px;
-}
-.item-link9 {
-  width: 181.83px;
-  height: 24px;
-  position: absolute;
-  right: 0px;
-  top: 7px;
-}
-.send-us-a-message {
-  color: #ffffff;
-  text-align: right;
-  font-family: "DmSans-Bold", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 700;
-  position: absolute;
-  right: 30.68px;
-  top: 1px;
-  width: 151.15px;
-  height: 21px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.svg2 {
-  width: 19px;
-  height: 12px;
-  position: absolute;
-  left: 159.83px;
-  top: 6px;
-}
-.group4 {
-  height: auto;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  overflow: visible;
-}
-.horizontal-divider {
-  background: #ffffff;
-  height: 2px;
-  position: absolute;
-  right: 3px;
-  left: 159.8300018310547px;
-  top: 50%;
-  translate: 0 -50%;
-}
-.item-link10 {
-  width: 116.11px;
-  height: 24px;
-  position: absolute;
-  right: 0px;
-  top: 76px;
-}
-._845-356-1234 {
-  color: #ffffff;
-  text-align: right;
-  font-family: "DmSans-9PtRegular", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-  position: absolute;
-  right: -0.38px;
-  top: 1px;
-  width: 116.49px;
-  height: 21px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.item-link11 {
-  width: 235px;
-  height: 48px;
-  position: absolute;
-  right: 0px;
-  top: 125px;
-}
-.desa-tutur-kabupaten-pasuruan {
-  color: #ffffff;
-  text-align: right;
-  font-family: "DmSans-9PtRegular", sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-  position: absolute;
-  right: -0.2px;
-  top: 1px;
-  width: 188.31px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-.item-link12 {
-  width: 80px;
-  height: 40px;
-  position: absolute;
-  right: 0px;
-  top: 213px;
-}
-.background2 {
-  background: #274d3e;
-  height: 65px;
-  position: absolute;
-  right: 0px;
-  left: 0px;
-  top: 537px;
-}
-._2025-kampung-bunga-krisan-all-rights-reserved {
-  color: rgba(255, 255, 255, 0.8);
-  text-align: left;
-  font-family: "OpenSans-Regular", sans-serif;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 400;
-  position: absolute;
-  left: 397.5px;
-  top: 26px;
-  width: 314.8px;
-  height: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.nav-list-item-link {
-  width: 74.95px;
-  height: 17px;
-  position: absolute;
-  right: 417.5px;
-  top: 26px;
-}
-.privacy-policy {
-  color: rgba(255, 255, 255, 0.8);
-  text-align: right;
-  font-family: "OpenSans-Regular", sans-serif;
-  font-size: 12px;
-  line-height: 16px;
-  font-weight: 400;
-  position: absolute;
-  right: -0.32px;
-  top: 0px;
-  width: 75.27px;
-  height: 17px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+
+.footer-bottom a {
+  color: #fff;
+  text-decoration: none;
 }
 
 /* Pop Up Overlay */
@@ -1239,7 +905,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(4px); /* efek blur */
+  backdrop-filter: blur(4px); 
 }
 
 .rectangle-5 {
@@ -1268,6 +934,8 @@ body {
   box-shadow: 0 8px 40px rgba(44,87,71,0.18);
   min-width: 320px;
   max-width: 700px;
+  max-height: 90vh; /* Batasi tinggi maksimal pop-up */
+  overflow-y: auto; /* Tambahkan scroll jika konten melebihi tinggi */
   width: fit-content;
   padding: 32px;
   display: flex;
@@ -1276,6 +944,20 @@ body {
   position: relative;
   margin: auto;
 }
+
+.rectangle-4 {
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.rectangle-4::-webkit-scrollbar {
+  width: 6px;
+}
+.rectangle-4::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 6px;
+}
+
 
 /* Heading dan tombol X */
 .heading-2-a-summer-to-grow-explore {
@@ -1321,6 +1003,103 @@ body {
   }
 }
 
+/*FARMER-LIST*/
+.card-profil {
+  background: #fff;
+  border-radius: 40px;
+  box-shadow: 4px 4px 50px 0px rgba(0,0,0,0.15);
+  width: 350px;
+  max-width: 95vw;
+  margin: 48px auto;
+  padding: 32px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.profil-img {
+  width: 200px;      
+  height: 200px;     
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 18px;
+  border: 4px solid #2C5747;
+  box-shadow: 0 2px 16px rgba(44,87,71,0.10);
+}
+
+.heading-2-a-summer-to-grow-explore {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2C5747;
+  margin-bottom: 8px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.heading-2-a-summer-to-grow-explore2 {
+  font-size: 1.1rem;
+  color: #fff;
+  margin-bottom: 12px;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.profil-desc {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 18px;
+  text-align: center;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.button-lihat-detail2 {
+  color: #fff;
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.heading-2-a-summer-to-grow-explore3 {
+  background: #2C5747;
+  color: #fff;
+  padding: 10px 32px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: 'DM Sans', sans-serif;
+  box-shadow: 0 2px 8px rgba(44,87,71,0.08);
+}
+
+.heading-2-a-summer-to-grow-explore3:hover {
+  background: #1e3d2e;
+}
+
+.farmer-card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin: 48px auto;
+  max-width: 1200px;
+}
+
+/* Responsive: 1 card per row di mobile */
+@media (max-width: 900px) {
+  .farmer-card-grid {
+    gap: 18px;
+    max-width: 98vw;
+  }
+  .card-profil {
+    width: 98vw;
+    max-width: 400px;
+  }
+}
+
 
 /* Footer */
 footer {
@@ -1329,6 +1108,5 @@ footer {
     text-align: center;
     padding: 12px 8px;
     font-size: 13px;
-    /* Dikecilkan dari 14px */
     font-family: Arial, sans-serif;
 }

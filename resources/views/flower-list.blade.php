@@ -1,11 +1,21 @@
-{{-- filepath: d:\websitekrisan\website_krisan\resources\views\flower-list.blade.php --}}
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Koleksi Bunga Krisan</title>
+    <title>Bunga</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+
 </head>
 <body>
   <div class="flower-list-page">
@@ -14,7 +24,7 @@
             <a href="{{ url('/') }}">Home</a>
             <a href="#about">About</a>
             <a href="{{ url('/flower-list') }}">Flower</a>
-            <a href="#marketplace">Marketplace</a>
+            <a href="{{ url('/farmer-list') }}">Marketplace</a>
             <a href="#gallery">Gallery</a>
         </nav>
     </header>
@@ -25,7 +35,7 @@
     </div>
     <div class="section">
     <img class="bunga-krisan-1" src="bunga-krisan-10.png" />
-    <div class="heading-2-a-summer-to-grow-explore3">Koleksi Bunga</div>
+    <div class="heading-2-a-summer-to-grow-explore">Koleksi Bunga</div>
     <div class="desa-tutur-kabupaten-pasuruan2">
       Desa Tutur Kabupaten Pasuruan
     </div>
@@ -35,77 +45,47 @@
   </div>
   
   <div class="flower-card-grid" id="flower-card-container"></div>
-    
-  <div class="footer">
-      <div class="figure-svg">
-        <img class="group" src="group0.svg" />
+
+  <footer class="footer">
+  <div class="footer-top">
+    <div class="footer-column">
+      <ul>
+        <li><a href="#">Tentang Kami</a></li>
+        <li><a href="#">Bunga</a></li>
+        <li><a href="#">Marketplace</a></li>
+        <li><a href="#">Galeri</a></li>
+        <li><a href="#">Bergabung dengan Kami</a></li>
+      </ul>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
-      <div class="background">
-        <div class="heading-4-get-updates">Thank You</div>
-        <div class="krisan-tutur-mekar-lebih-lama-indah-sepanjang-masa">
-          Krisan Tutur: Mekar Lebih Lama, Indah Sepanjang Masa
-        </div>
-        <div class="vertical-divider"></div>
-        <div class="vertical-divider2"></div>
-        <div class="container">
-          <div class="nav-list">
-            <div class="item-link">
-              <div class="about-us">About Us</div>
-            </div>
-            <div class="item-link2">
-              <div class="bunga">Bunga</div>
-            </div>
-            <div class="item-link3">
-              <div class="marketplace2">Marketplace</div>
-            </div>
-            <div class="item-link4">
-              <div class="gallery2">Gallery</div>
-            </div>
-            <div class="item-link5">
-              <div class="join-our-team">Join Our Team</div>
-            </div>
-            <div class="item-link6"></div>
-          </div>
-          <div class="list">
-            <div class="item-link7">
-              <div class="svg">
-                <img class="group2" src="group1.svg" />
-              </div>
-            </div>
-            <div class="item-link8">
-              <div class="svg">
-                <img class="group3" src="group2.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="list2">
-          <div class="item-link9">
-            <div class="send-us-a-message">Send Us A Message</div>
-            <div class="svg2">
-              <img class="group4" src="group3.svg" />
-            </div>
-            <div class="horizontal-divider"></div>
-          </div>
-          <div class="item-link10">
-            <div class="_845-356-1234">(845) 356-1234</div>
-          </div>
-          <div class="item-link11">
-            <div class="desa-tutur-kabupaten-pasuruan">
-              Desa Tutur Kabupaten Pasuruan
-            </div>
-          </div>
-          <div class="item-link12"></div>
-        </div>
-      </div>
-      <div class="background2">
-        <div class="_2025-kampung-bunga-krisan-all-rights-reserved">
-          © 2025 KampungBungaKrisan. All Rights Reserved.
-        </div>
-        <div class="nav-list-item-link">
-          <div class="privacy-policy">Privacy Policy</div>
-        </div>
-      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-column center">
+      <h2>Terima Kasih</h2>
+      <p><em>Krisan Tutur: Mekar Lebih Lama, Indah Sepanjang Masa</em></p>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-column right">
+      <h4>Kirim Pesan kepada Kami →</h4>
+      <p>(845) 356–1234</p>
+      <p>Desa Tutur<br>Kabupaten Pasuruan</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 KampungBungaKrisan. Seluruh Hak Cipta Dilindungi.</p>
+    <a href="#">Kebijakan Privasi</a>
+  </div>
+</footer>
+
+
     <!-- Pop Up Detail (sembunyikan awalnya) -->
     <div class="pop-up" id="popup-detail" style="display:none;">
       <div class="rectangle-4">
@@ -188,7 +168,7 @@ function showPopup(idx) {
       `"Temukan pesona abadi dari bunga Krisan, atau yang juga dikenal sebagai Seruni. Setiap tangkainya dimahkotai oleh ratusan kelopak yang tersusun sempurna, menciptakan tampilan yang mewah dan penuh tekstur. Tersedia dalam spektrum warna yang memesona—dari putih murni yang melambangkan kejujuran, kuning ceria sebagai tanda persahabatan, hingga ungu anggun yang memancarkan kemewahan.<br>Bunga Krisan tidak hanya indah dipandang, tetapi juga sarat akan makna positif seperti kebahagiaan dan kehidupan yang panjang. Jadikan bunga ini sebagai pusat perhatian di meja makan Anda, rangkaian bunga ucapan selamat, atau sebagai hadiah yang menunjukkan ketulusan hati Anda kepada orang yang spesial."`;
     document.getElementById('popup-detail').style.display = 'flex';
 }
-document.getElementById('close-popup').onclick = function() {
+    document.getElementById('close-popup').onclick = function() {
     document.getElementById('popup-detail').style.display = 'none';
 };
 
