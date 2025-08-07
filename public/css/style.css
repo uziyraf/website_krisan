@@ -608,22 +608,173 @@ body {
 
 
 
-.massage {
-    min-height: 120vh;
-    background-color: cornsilk;
-
-    padding: 50px 30px;
-    /* atas-bawah dan kiri-kanan */
-    text-align: left;
-    /* teks rata kiri */
+.massage-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px;
+  background-color: cornsilk;
+  height: 800px;
 }
 
-.massage h1 {
-    color: #115234;
-    font-size: 36px;
-    font-weight: bold;
-    margin: 0;
+.massage-left {
+  flex: 1;
+  margin-right: 40px;
 }
+
+.massage-left h2 {
+  font-size: 35px;
+  color: #115234;
+  margin-bottom: 10px;
+}
+
+.massage-left p {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.massage-left form {
+  display: flex;
+  flex-direction: column;
+}
+
+.massage-left input,
+.massage-left textarea {
+  padding: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+.massage-left textarea {
+  height: 150px; /* Lebar ke bawah ditambahkan di sini */
+}
+
+
+.info-button {
+  width: 180px;
+  padding: 10px 20px;
+  background-color: #2C5747;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px; /* opsional jika mau diberi jarak bawah */
+}
+
+.info-button:hover {
+  background-color: #244737;
+}
+
+.submit-button {
+  width: 100px;
+  padding: 10px 20px;
+  background-color: #2C5747;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px; /* opsional jika mau diberi jarak bawah */
+}
+
+.submit-button:hover {
+  background-color: #244737;
+}
+
+
+.massage-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.massage-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+.massage-right {
+  position: relative; /* penting untuk posisi absolut */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-text {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  /* background-color: rgba(44, 87, 71, 0.8); transparansi hijau gelap */
+  color:#244737;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: right;
+}
+
+.location-text h3 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.location-text p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.massage-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* agar semua isi ke kanan */
+}
+
+.right-image2{
+width: 600px; /* atur besar gambar sesuai kebutuhan */
+  height: auto;
+  margin-bottom: 10px; /* jarak antar gambar */
+}
+
+.center {
+  display: flex;
+  justify-content: center; /* center horizontal */
+  
+  background-color: cornsilk; /* warna latar belakang */
+           
+  width: 100%;
+}
+
+.bottom-image2 {
+  width: 1100px;
+
+}
+
+
+
+/* boxgren */
+.green-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2C5747; /* Warna hijau */
+  color: white;
+  width: 100%;
+  height: 400px;
+}
+
+.green-box .line {
+  height: 2px;
+  width: 50px;
+  background-color: white;
+  margin: 0 15px;
+}
+
+
 
 
 
