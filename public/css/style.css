@@ -811,6 +811,8 @@ body {
   color: #fff;
   padding: 3rem 2rem 1rem;
   font-family: sans-serif;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .footer-top {
