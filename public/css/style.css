@@ -601,506 +601,181 @@ body {
     border-radius: 10px;
 }
 
-.massage {
-    min-height: 120vh;
-    background-color: cornsilk;
-
-    padding: 50px 30px;
-    /* atas-bawah dan kiri-kanan */
-    text-align: left;
-    /* teks rata kiri */
-}
-
-.massage h1 {
-    color: #115234;
-    font-size: 36px;
-    font-weight: bold;
-    margin: 0;
-}
-
-/*halaman flower-list*/
-
-/* Container halaman flower-list */
-.flower-list-page {
-  padding-top: 80px;
-  background: #FBF3E2;
-  min-height: 100vh;
-  padding-bottom: 0;
-  margin-bottom: 0;
-  box-sizing: border-box;
-}
-
-/* Section judul dan deskripsi */
-.section {
-  margin: 100px auto 40px auto;
-  text-align: center;
-  max-width: 700px;
-  padding: 0 16px;
-}
-
-.heading-2-a-summer-to-grow-explore3 {
-  color: #2c5747;
-  font-family: "Alegreya-Medium", sans-serif;
-  font-size: 48px;
-  line-height: 1.1;
-  font-weight: 500;
-  margin-bottom: 18px;
-  text-align: center;
-  width: 100%;
-}
-
-.desa-tutur-kabupaten-pasuruan2 {
-  color: #000;
-  font-family: "DmSans-9PtRegular", sans-serif;
-  font-size: 26px;
-  line-height: 1.5;
-  font-weight: 400;
-  margin-bottom: 18px;
-  text-align: center;
-  width: 100%;
-}
-
-.link7 {
-  background: #2c5747;
-  border-radius: 6px;
-  width: 270px;
-  margin: 0 auto 18px auto;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  padding: 8px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.explore-our-flower {
-  color: #fff;
-  font-family: "DmSans-Bold", sans-serif;
-  font-size: 17px;
-  letter-spacing: 1px;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.bunga-krisan-12 {
-  width: 121px;
-  height: 106px;
-  object-fit: cover;
-  aspect-ratio: 121/106;
-  margin: 18px auto 0 auto;
-  display: block;
-}
-
-/* Card */
-/* Grid Card Flower */
-.flower-card-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  justify-content: center;
-  margin: 48px auto;
-  max-width: 1200px;
-}
-
-/* Card */
-.card {
-  background: #fff;
-  border-radius: 40px;
-  border: 1px solid rgba(0,0,0,0);
-  box-shadow: 4px 4px 50px 0px rgba(0,0,0,0.15);
-  width: 350px;
-  margin: 0;
-  padding: 32px 24px 24px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Responsive: 1 card per row on mobile */
-@media (max-width: 900px) {
-  .flower-card-grid {
-    gap: 18px;
-    max-width: 98vw;
-  }
-  .card {
-    width: 98vw;
-    max-width: 400px;
-  }
-}
-
-.rectangle-2 {
-  width: 90%;
-  max-width: 320px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 24px;
-  margin-bottom: 18px;
-  box-shadow: 0 2px 16px rgba(44,87,71,0.10);
-}
-
-.heading-2-a-summer-to-grow-explore {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #2C5747;
-  margin-top: 32px;
-  margin-bottom: 12px;
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-}
 
 
-.bunga-krisan-atau-seruni-adalah-simbol-keanggunan-klasik-dengan-ratusan-kelopak-yang-tersusun-rimbun-dan-sempurna-bunga-ini-memancarkan-pesona-yang-tak-lekang-oleh-waktu {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 18px;
-  text-align: center;
-  font-family: 'DM Sans', sans-serif;
-}
 
-.button-lihat-detail {
-  margin-top: 10px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
 
-.heading-2-a-summer-to-grow-explore2 {
-  background: #2C5747;
-  color: #fff;
-  padding: 10px 32px;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
-  cursor: pointer;
-  transition: background 0.2s;
-  font-family: 'DM Sans', sans-serif;
-  box-shadow: 0 2px 8px rgba(44,87,71,0.08);
-}
 
-.heading-2-a-summer-to-grow-explore2:hover {
-  background: #1e3d2e;
-}
 
-/* Responsive */
-@media (max-width: 600px) {
-  .section {
-    margin: 60px auto 24px auto;
-    padding: 0 8px;
-  }
-  .card {
-    width: 98vw;
-    padding: 18px 8px;
-    border-radius: 24px;
-  }
-  .rectangle-2 {
-    height: 140px;
-    border-radius: 16px;
-  }
-}
 
-/*FOOTER*/
-/* Ubah .footer jadi flex column */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-}
-
-.footer {
-  background-color: #2e5747;
-  color: #fff;
-  padding: 3rem 2rem 1rem;
-  font-family: sans-serif;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.footer-top {
+.massage-container {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 2rem;
-}
-
-.footer-column {
-  flex: 1;
-  min-width: 200px;
-}
-
-.footer-column ul {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 1.5rem;
-}
-
-.footer-column ul li {
-  margin-bottom: 0.5rem;
-}
-
-.footer-column ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer-column ul li a:hover {
-  text-decoration: underline;
-}
-
-.footer-column.center {
-  text-align: center;
-}
-
-.footer-column.center h2 {
-  margin-bottom: 0.5rem;
-}
-
-.footer-column.right h4 {
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-.footer-divider {
-  width: 1px;
-  background-color: rgba(255, 255, 255, 0.3);
-  margin: 0 1rem;
-}
-
-.social-icons a {
-  margin-right: 1rem;
-  color: #fff;
-  font-size: 1.2rem;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  padding: 0.4rem 0.6rem;
-  display: inline-block;
-}
-
-.footer-bottom {
-  display: flex;
-  justify-content: center;
-  font-size: 0.85rem;
-  padding-top: 1rem;
-}
-
-.footer-bottom a {
-  color: #fff;
-  text-decoration: none;
-}
-
-/* Pop Up Overlay */
-/* Pop Up Content Flex */
-.popup-content-flex {
-  display: flex;
   align-items: flex-start;
-  gap: 24px;
-  margin: 80px 32px 32px 32px;
+  padding: 50px;
+  background-color: cornsilk;
+  height: 800px;
 }
 
-/* Gambar di pop up */
-.pop-up {
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(44,87,71,0.45);
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(4px); 
+.massage-left {
+  flex: 1;
+  margin-right: 40px;
 }
 
-.rectangle-5 {
-  width: 180px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 18px;
-  flex-shrink: 0;
+.massage-left h2 {
+  font-size: 35px;
+  color: #115234;
+  margin-bottom: 10px;
 }
 
-/* Deskripsi di pop up */
-.temukan-pesona-abadi-dari-bunga-krisan {
-  font-size: 1rem;
-  color: #444;
-  text-align: left;
-  line-height: 1.6;
-  font-family: 'DM Sans', sans-serif;
-  max-width: 320px;
-  word-break: break-word;
+.massage-left p {
+  margin-bottom: 10px;
+  font-size: 20px;
 }
 
-/* Rectangle-4 mengikuti konten */
-.rectangle-4 {
-  background: #fff;
-  border-radius: 32px;
-  box-shadow: 0 8px 40px rgba(44,87,71,0.18);
-  min-width: 320px;
-  max-width: 700px;
-  max-height: 90vh; /* Batasi tinggi maksimal pop-up */
-  overflow-y: auto; /* Tambahkan scroll jika konten melebihi tinggi */
-  width: fit-content;
-  padding: 32px;
+.massage-left form {
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  position: relative;
-  margin: auto;
 }
 
-.rectangle-4 {
-  scrollbar-width: thin;
-  scrollbar-color: #ccc transparent;
-}
-
-.rectangle-4::-webkit-scrollbar {
-  width: 6px;
-}
-.rectangle-4::-webkit-scrollbar-thumb {
-  background-color: #ccc;
-  border-radius: 6px;
-}
-
-
-/* Heading dan tombol X */
-.heading-2-a-summer-to-grow-explore {
-  font-size: 2rem;
-  color: #2C5747;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 32px;
-  margin-bottom: 12px;
-}
-
-.x-circle {
-  position: absolute;
-  top: 24px;
-  right: 32px;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  z-index: 3;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .popup-content-flex {
-    flex-direction: column;
-    align-items: center;
-    margin: 32px 8px 8px 8px;
-    gap: 12px;
-  }
-  .rectangle-5 {
-    width: 90vw;
-    max-width: 300px;
-  }
-  .temukan-pesona-abadi-dari-bunga-krisan {
-    max-width: 90vw;
-    font-size: 0.95rem;
-  }
-  .rectangle-4 {
-    min-width: 0;
-    max-width: 98vw;
-    width: 98vw;
-    padding-bottom: 18px;
-  }
-}
-
-/*FARMER-LIST*/
-.card-profil {
-  background: #fff;
-  border-radius: 40px;
-  box-shadow: 4px 4px 50px 0px rgba(0,0,0,0.15);
-  width: 350px;
-  max-width: 95vw;
-  margin: 48px auto;
-  padding: 32px 24px 24px 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-
-.profil-img {
-  width: 200px;      
-  height: 200px;     
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 18px;
-  border: 4px solid #2C5747;
-  box-shadow: 0 2px 16px rgba(44,87,71,0.10);
-}
-
-.heading-2-a-summer-to-grow-explore {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #2C5747;
-  margin-bottom: 8px;
-  text-align: center;
-  font-family: 'Playfair Display', serif;
-}
-
-.heading-2-a-summer-to-grow-explore2 {
-  font-size: 1.1rem;
-  color: #fff;
-  margin-bottom: 12px;
-  text-align: center;
-  font-family: 'DM Sans', sans-serif;
-}
-
-.profil-desc {
-  font-size: 1rem;
-  color: #444;
-  margin-bottom: 18px;
-  text-align: center;
-  font-family: 'DM Sans', sans-serif;
-}
-
-.button-lihat-detail2 {
-  color: #fff;
-  margin-top: 10px;
+.massage-left input,
+.massage-left textarea {
+  padding: 10px;
+  margin-bottom: 15px;
   width: 100%;
-  display: flex;
-  justify-content: center;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: none;
+}
+.massage-left textarea {
+  height: 150px; /* Lebar ke bawah ditambahkan di sini */
 }
 
-.heading-2-a-summer-to-grow-explore3 {
-  background: #2C5747;
-  color: #fff;
-  padding: 10px 32px;
-  border-radius: 12px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
+
+.info-button {
+  width: 180px;
+  padding: 10px 20px;
+  background-color: #2C5747;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
   cursor: pointer;
-  transition: background 0.2s;
-  font-family: 'DM Sans', sans-serif;
-  box-shadow: 0 2px 8px rgba(44,87,71,0.08);
+  margin-bottom: 15px; /* opsional jika mau diberi jarak bawah */
 }
 
-.heading-2-a-summer-to-grow-explore3:hover {
-  background: #1e3d2e;
+.info-button:hover {
+  background-color: #244737;
 }
 
-.farmer-card-grid {
+.submit-button {
+  width: 100px;
+  padding: 10px 20px;
+  background-color: #2C5747;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 15px; /* opsional jika mau diberi jarak bawah */
+}
+
+.submit-button:hover {
+  background-color: #244737;
+}
+
+
+.massage-right {
+  flex: 1;
   display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
   justify-content: center;
-  margin: 48px auto;
-  max-width: 1200px;
+  align-items: center;
 }
 
-/* Responsive: 1 card per row di mobile */
-@media (max-width: 900px) {
-  .farmer-card-grid {
-    gap: 18px;
-    max-width: 98vw;
-  }
-  .card-profil {
-    width: 98vw;
-    max-width: 400px;
-  }
+.massage-right img {
+  max-width: 100%;
+  height: auto;
 }
+
+.massage-right {
+  position: relative; /* penting untuk posisi absolut */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-text {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  /* background-color: rgba(44, 87, 71, 0.8); transparansi hijau gelap */
+  color:#244737;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: right;
+}
+
+.location-text h3 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.location-text p {
+  margin: 0;
+  font-size: 20px;
+}
+
+.massage-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* agar semua isi ke kanan */
+}
+
+.right-image2{
+width: 600px; /* atur besar gambar sesuai kebutuhan */
+  height: auto;
+  margin-bottom: 10px; /* jarak antar gambar */
+}
+
+.center {
+  display: flex;
+  justify-content: center; /* center horizontal */
+  
+  background-color: cornsilk; /* warna latar belakang */
+           
+  width: 100%;
+}
+
+.bottom-image2 {
+  width: 1100px;
+
+}
+
+
+
+/* boxgren */
+.green-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2C5747; /* Warna hijau */
+  color: white;
+  width: 100%;
+  height: 400px;
+}
+
+.green-box .line {
+  height: 2px;
+  width: 50px;
+  background-color: white;
+  margin: 0 15px;
+}
+
+
+
 
 
 /* Footer */
