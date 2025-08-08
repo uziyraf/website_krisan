@@ -72,7 +72,7 @@ body {
 .hero {
     min-height: 100vh;
     padding: 60px 20px 80px 200px;
-    background: url('../img/bunga_krisan.jpeg') no-repeat center center / cover;
+    background: url('../img/Container.png') no-repeat center center / cover;
     color: white;
     position: relative;
     display: flex;
@@ -761,22 +761,32 @@ width: 600px; /* atur besar gambar sesuai kebutuhan */
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #2C5747; /* Warna hijau */
+  background-color: #2C5747;
   color: white;
   width: 100%;
   height: 400px;
+  gap: 30px; /* Jarak antar elemen */
 }
 
-.green-box .line {
-  height: 2px;
-  width: 50px;
-  background-color: white;
-  margin: 0 15px;
+.vertical-line2 {
+  width: 1px;
+  height: 250px;
+  background-color: black;
 }
 
+.text-content {
+  text-align: center;
+}
 
+.text-content h1 {
+  margin: 0;
+  font-size: 36px;
+}
 
-
+.text-content p {
+  margin-top: 10px;
+  font-size: 18px;
+}
 
 /* Footer */
 footer {

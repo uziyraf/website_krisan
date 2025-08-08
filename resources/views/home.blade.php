@@ -184,14 +184,18 @@
 
 
     <section class="image-and-box">
+  <div class="green-box">
+    <div class="vertical-line2"></div> <!-- Garis kiri -->
 
-        <div class="green-box">
-            <div class="line"></div>
-            <h1>Tank You</h1>
-            <p>Krisan Tutur: Mekar Lebih Lama, Indah </br> Sepanjang Masa</p>
-            <div class="line"></div>
-        </div>
-    </section>
+    <div class="text-content">
+      <h1>Tank You</h1>
+      <p>Krisan Tutur: Mekar Lebih Lama, Indah <br> Sepanjang Masa</p>
+    </div>
+
+    <div class="vertical-line2"></div> <!-- Garis kanan -->
+  </div>
+</section>
+
 
 
     </section>
