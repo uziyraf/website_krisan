@@ -499,7 +499,7 @@ body {
     text-align: center;
 }
 
-.profile-card img {
+.profile-card img .ellipse-1  {
     width: 250px;
     height: 250px;
     object-fit: cover;
@@ -553,7 +553,7 @@ body {
 
 
 /* galery */
-.galery {
+.galery, .section-3{
     min-height: 100vh;
     background-color: #2C5747;
     padding: 50px 30px;
@@ -631,12 +631,14 @@ body {
 }
 
 /* Section judul dan deskripsi */
-.section {
+.section,
+.story-line {
   margin: 100px auto 40px auto;
   text-align: center;
   max-width: 700px;
   padding: 0 16px;
 }
+
 
 .heading-2-a-summer-to-grow-explore3 {
   color: #2c5747;
@@ -1030,6 +1032,15 @@ body {
   box-shadow: 0 2px 16px rgba(44,87,71,0.10);
 }
 
+.heading-1-a-summer-to-grow-explore {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 8px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
 .heading-2-a-summer-to-grow-explore {
   font-size: 2rem;
   font-weight: bold;
@@ -1089,6 +1100,150 @@ body {
   margin: 48px auto;
   max-width: 1200px;
 }
+
+/*FARMER-DETAIL*/
+.profile-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.ellipse-wrapper {
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+.ellipse-1 {
+  background: #ffffff;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.ellipse-2 {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+/* Text dan lokasi */
+.name-farmer {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 20px;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+}
+
+.group-2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.link-address {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin: 0;
+}
+
+.location-on {
+  width: 24px;
+  height: 24px;
+}
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px; /* atau sesuai layout kamu */
+  margin: 0 auto; /* biar tetap di tengah */
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+
+/*section-wa*/
+.section-whatsapp {
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rectangle-1 {
+  background: #ffffff;
+  border-radius: 50px;
+  box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.25);
+  padding: 40px;
+  width: 700px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.heading-2-a-summer-to-grow-explore {
+  font-family: "Alegreya-ExtraBold", sans-serif;
+  font-size: 24px;
+  text-align: center;
+  color: #000;
+}
+
+.desc-wa {
+  font-family: "Alegreya-Medium", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: #000;
+  max-width: 500px;
+}
+
+.rectangle-8 {
+  background: #11ce43;
+  border-radius: 50px;
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.rectangle-8:hover {
+  background: #0fab38;
+}
+
+.hubungi-via-whats-app {
+  font-family: "Alegreya-ExtraBold", sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+
 
 /* Responsive: 1 card per row di mobile */
 @media (max-width: 900px) {

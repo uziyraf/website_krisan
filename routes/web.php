@@ -13,3 +13,7 @@ Route::get('/flower-list', function () {
 Route::get('/farmer-list', function () {
     return view('farmer-list');
 });
+
+Route::get('/farmer-detail', function () {
+    return view('farmer-detail');
+});

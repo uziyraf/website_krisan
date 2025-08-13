@@ -34,7 +34,7 @@
       
     </div>
     <div class="section">
-    <img class="bunga-krisan-1" src="bunga-krisan-10.png" />
+    <img class="bunga-krisan-1" src="img/icon.png" />
     <div class="heading-2-a-summer-to-grow-explore">Koleksi Bunga</div>
     <div class="desa-tutur-kabupaten-pasuruan2">
       Desa Tutur Kabupaten Pasuruan

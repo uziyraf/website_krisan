@@ -28,13 +28,13 @@
     </header>
    
     <div class="section">
-        <img class="bunga-krisan-1" src="bunga-krisan-10.png" />
-        <div class="heading-2-a-summer-to-grow-explore">Koleksi Bunga</div>
+        <img class="bunga-krisan-1" src="img/icon.png" />
+        <div class="heading-2-a-summer-to-grow-explore">Petani Kami</div>
         <div class="desa-tutur-kabupaten-pasuruan2">
         Desa Tutur Kabupaten Pasuruan
         </div>
         <div class="link7">
-        <div class="explore-our-flower">Explore OUR Flower</div>
+        <div class="explore-our-flower">Kenali kami</div>
         </div>
     </div>
 
@@ -85,7 +85,7 @@
                     name: "Uzi",
                     specialization: "Spesialis Bunga Krisan",
                     description: "Petani berpengalaman, ahli budidaya Krisan sejak 2010.",
-                    image: "profil-uzi.png",
+                    image: "img/biliy.jpg",
                     detail: "Lihat Profil & Bunga"
                 },
                 {
