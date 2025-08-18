@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Calon engineer</title>
+    <title>Beranda</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
     <header class="navbar">
         <nav>
             <a href="{{ url('/') }}">Home</a>
-            <a href="#about">About</a>
+            <a href="{{ url('/about') }}">About</a>
             <a href="{{ url('/flower-list') }}">Flower</a>
             <a href="{{ url('/farmer-list') }}">Marketplace</a>
             <a href="#gallery">Gallery</a>
@@ -46,7 +46,7 @@
     </section>
 
     <section class="hero-caption">
-        <img src="img/icon.png" alt="Bunga Krisan" class="flower-icon"> <!-- Gambar bunga -->
+        <img src="img/icon.png" alt="Bunga Krisan" class="flower-icon">
         <h2>Kampung Bunga Krisan</h2>
         <p>Desa Tutur Kabupaten Pasuruan</p>
         <button class="explore-btn" onclick="scrollToFlower()">Explore Our Flower</button>
@@ -185,16 +185,43 @@
 
     <section class="image-and-box">
   <div class="green-box">
-    <div class="vertical-line2"></div> <!-- Garis kiri -->
+    
+    <!-- Kiri -->
+    <div class="left-column">
+     
+      <ul class="left-list">
+        <li>About Us</li>
+        <li>Bunga</li>
+        <li>Marketplace</li>
+        <li>Gallery</li>
+        <li>Join Our Team</li>
+      </ul>
+    </div>
 
+    <!-- Garis Pemisah -->
+    <div class="vertical-line2"></div>
+
+    <!-- Tengah (Tetap yang lama) -->
     <div class="text-content">
       <h1>Tank You</h1>
       <p>Krisan Tutur: Mekar Lebih Lama, Indah <br> Sepanjang Masa</p>
     </div>
 
-    <div class="vertical-line2"></div> <!-- Garis kanan -->
+    <!-- Garis Pemisah -->
+    <div class="vertical-line2"></div>
+
+    <!-- Kanan -->
+    <div class="right-column">
+      <ul class="right-list">
+        <li>Send Us A massage</li>
+        <li>+6281333154747</li>
+        <li>Desa Tutur Kabupaten</br>Pasuruan</li>
+      </ul>
+    </div>
+
   </div>
 </section>
+
 
 
 
@@ -205,7 +232,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        &copy; 2025 Davi Florist - Semua Hak Dilindungi
+        &copy; KampungBungaKrisan.All Rights Reserved. Privasy Policy
     </footer>
 
     <script src="{{ asset('js/script.js') }}"></script>
