@@ -22,9 +22,9 @@
     <header class="navbar">
         <nav>
             <a href="{{ url('/') }}">Home</a>
-            <a href="#about">About</a>
+            <a href="{{ url('/about') }}">About</a>
             <a href="{{ url('/flower-list') }}">Flower</a>
-            <a href="{{ url('/farmer-list') }}">Marketplace</a>
+            <a href="{{ url('/farmer-list') }}">Farmer</a>
             <a href="#gallery">Gallery</a>
         </nav>
     </header>
@@ -84,9 +84,6 @@
 
         </div>
 
-        <div class="img-5-container">
-            <img src="img/reviews.png" alt="Bunga 1" class="img-5" />
-        </div>
 
         <div class="centered-content">
             <img src="img/icon.png" alt="Bunga Krisan" class="icon">
@@ -97,7 +94,7 @@
         </div>
 
         <!-- petani -->
-        <div class="slider-container">
+        <div class="card-profil">
             <div class="card-wrapper">
                 <div class="profile-card">
                     <img src="img/biliy.jpg" alt="Petani 1" />

@@ -21,7 +21,7 @@
             <a href="{{ url('/') }}">Home</a>
             <a href="#about">About</a>
             <a href="{{ url('/flower-list') }}">Flower</a>
-            <a href="{{ url('/farmer-list') }}">Marketplace</a>
+            <a href="{{ url('/farmer-list') }}">Farmer</a>
             <a href="#gallery">Gallery</a>
         </nav>
     </header>
@@ -34,8 +34,8 @@
         </div>
         <div class="name-farmer">Uzi</div>
         <div class="group-2">
-        <img class="location-on" src="location-on0.svg" alt="icon lokasi">
-        <div class="link-address">Tutur - Pasuruan</div>
+        <img class="location-on" src="img/location.png" alt="icon lokasi">
+        <a href="#" class="link-address" target="_blank" rel="noopener noreferrer">Tutur-Pasuruan</a>
         </div>
     </div>
     </section>
@@ -121,45 +121,220 @@
         </div>
     </footer>
 
-     <script src="{{ asset('js/data-flower.js') }}"></script>
+      <script src="{{ asset('js/data-petani.js') }}"></script>
 
 <script>
-  const container3 = document.querySelector('#flower-section-3 .flower-card-grid');
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("=== FARMER DETAIL PAGE LOADED ===");
+    
+    // Debug: Cek apakah data farmers tersedia
+    console.log("typeof farmers:", typeof farmers);
+    
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    console.log("Farmer ID from URL:", id);
 
-  let currentIndex = 0;
-  const itemsPerPage = 3;
-
-  function renderFlowersSlider() {
-    let cardsSection3 = "";
-
-    const sliced = flowers.slice(currentIndex, currentIndex + itemsPerPage);
-    sliced.forEach((flower, idx) => {
-      cardsSection3 += `
-        <div class="card">
-          <img class="rectangle-2" src="${flower.image}" alt="${flower.title}" />
-          <div class="heading-2-a-summer-to-grow-explore">${flower.title}</div>
-          <div class="bunga-krisan-atau-seruni-adalah-simbol-keanggunan-klasik">
-            ${flower.description}
-          </div>
-          <div class="button-lihat-detail">
-            <div class="heading-2-a-summer-to-grow-explore2" onclick="showPopup(${currentIndex + idx})">${flower.detail}</div>
-          </div>
-        </div>
-      `;
-    });
-
-    container3.innerHTML = cardsSection3;
-  }
-
-  renderFlowersSlider();
-
-  setInterval(() => {
-    currentIndex += itemsPerPage;
-    if (currentIndex >= flowers.length) {
-      currentIndex = 0;
+    if (!id) {
+        document.querySelector('#home').innerHTML = '<p>ID petani tidak ditemukan di URL.</p>';
+        return;
     }
+
+    // Cek apakah data farmers tersedia
+    if (typeof farmers === 'undefined') {
+        console.error("ERROR: Variable 'farmers' is not defined!");
+        document.querySelector('#home').innerHTML = '<p style="color: red; text-align: center; padding: 2rem;">Data petani tidak dapat dimuat. Periksa file data-petani.js</p>';
+        return;
+    }
+
+    const farmer = farmers.find(f => f.id == id);
+    console.log("Found farmer:", farmer);
+
+    if (!farmer) {
+        document.querySelector('#home').innerHTML = '<p>Data petani tidak ditemukan untuk ID: ' + id + '</p>';
+        return;
+    }
+
+    // Isi data petani ke dalam halaman
+    try {
+        // Update nama petani
+        const nameElement = document.querySelector('.name-farmer');
+        if (nameElement) nameElement.textContent = farmer.name;
+        
+        // Update alamat
+        const addressElement = document.querySelector('.link-address');
+        if (addressElement) {
+            addressElement.textContent = farmer.address;
+            if (farmer.mapLink) addressElement.setAttribute('href', farmer.mapLink);
+        }
+        
+        // Update foto profil
+        const imageElement = document.querySelector('.ellipse-2');
+        if (imageElement && farmer.image) imageElement.setAttribute('src', farmer.image);
+        
+        // Update cerita
+        const storyElement = document.querySelector('.desc-story');
+        if (storyElement) storyElement.textContent = farmer.story;
+        
+        // Update spesialisasi jika ada
+        const specializationElement = document.querySelector('.specialization');
+        if (specializationElement && farmer.specialization) {
+            specializationElement.textContent = farmer.specialization;
+        }
+
+        // Update WhatsApp link
+        if (farmer.whatsapp) {
+            const whatsappButtons = document.querySelectorAll('.rectangle-8');
+            whatsappButtons.forEach(button => {
+                button.setAttribute('onclick', `window.open('https://wa.me/${farmer.whatsapp}', '_blank')`);
+            });
+        }
+        
+        console.log("✅ Farmer data loaded successfully");
+    } catch (error) {
+        console.error("❌ Error loading farmer data:", error);
+    }
+
+    // BAGIAN BUNGA - Mengambil dari property flowers di farmer
+    console.log("=== LOADING FLOWER DATA ===");
+    
+    // Cek apakah farmer memiliki property flowers
+    if (!farmer.flowers) {
+        console.error("ERROR: Farmer doesn't have flowers property");
+        const container3 = document.querySelector('#flower-section-3 .flower-card-grid');
+        if (container3) {
+            container3.innerHTML = '<div style="text-align: center; color: orange; padding: 2rem;">Petani ini belum memiliki data bunga tersedia.</div>';
+        }
+        return;
+    }
+    
+    if (!Array.isArray(farmer.flowers)) {
+        console.error("ERROR: farmer.flowers is not an array:", farmer.flowers);
+        return;
+    }
+    
+    if (farmer.flowers.length === 0) {
+        console.error("ERROR: farmer.flowers array is empty");
+        const container3 = document.querySelector('#flower-section-3 .flower-card-grid');
+        if (container3) {
+            container3.innerHTML = '<div style="text-align: center; padding: 2rem;">Petani ini belum menambahkan bunga ke daftar.</div>';
+        }
+        return;
+    }
+    
+    // Ambil data bunga dari farmer
+    const farmerFlowers = farmer.flowers;
+    console.log("✅ Farmer flowers data found:", farmerFlowers.length + " flowers available");
+    console.log("Farmer flowers:", farmerFlowers);
+
+    // Cari container untuk bunga
+    const container3 = document.querySelector('#flower-section-3 .flower-card-grid');
+    if (!container3) {
+        console.error("ERROR: Container '.flower-card-grid' not found!");
+        return;
+    }
+
+    // Variabel untuk carousel
+    let currentIndex = 0;
+    const itemsPerPage = 3;
+
+    // Function untuk render bunga
+    function renderFlowersSlider() {
+        console.log("--- Rendering flowers ---");
+        console.log("Current index:", currentIndex);
+        console.log("Items per page:", itemsPerPage);
+        
+        let cardsSection3 = "";
+        const sliced = farmerFlowers.slice(currentIndex, currentIndex + itemsPerPage);
+        console.log("Flowers to display:", sliced.length);
+
+        if (sliced.length === 0) {
+            console.warn("No flowers to display at current index");
+            container3.innerHTML = '<div style="text-align: center; padding: 2rem;">Tidak ada bunga untuk ditampilkan</div>';
+            return;
+        }
+
+        sliced.forEach((flower, idx) => {
+            const actualIndex = currentIndex + idx;
+            
+            // Buat deskripsi default jika tidak ada
+            const description = flower.description || `${flower.name} adalah salah satu bunga unggulan dari kebun ${farmer.name}. Bunga ini dirawat dengan penuh perhatian untuk menghasilkan kualitas terbaik.`;
+            
+            cardsSection3 += `
+                <div class="card">
+                    <img class="rectangle-2" src="${flower.image}" alt="${flower.name}" onerror="this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(flower.name)}'" />
+                    <div class="heading-2-a-summer-to-grow-explore">${flower.name}</div>
+                    <div class="bunga-krisan-atau-seruni-adalah-simbol-keanggunan-klasik">
+                        ${description}
+                    </div>
+                    <div class="button-lihat-detail">
+                        <div class="heading-2-a-summer-to-grow-explore2" onclick="showPopup(${actualIndex})">Lihat Detail</div>
+                    </div>
+                </div>
+            `;
+        });
+
+        container3.innerHTML = cardsSection3;
+        console.log("✅ Flowers rendered successfully");
+        
+        // Verifikasi render
+        setTimeout(() => {
+            const cardElements = container3.querySelectorAll('.card');
+            console.log("Cards in DOM:", cardElements.length);
+        }, 100);
+    }
+
+    // Global function untuk popup detail bunga
+    window.showPopup = function(index) {
+        console.log("showPopup called with index:", index);
+        
+        if (!farmerFlowers || !farmerFlowers[index]) {
+            console.error("Flower not found at index:", index);
+            alert("Detail bunga tidak ditemukan");
+            return;
+        }
+        
+        const flower = farmerFlowers[index];
+        const description = flower.description || `${flower.name} adalah salah satu bunga unggulan dari kebun ${farmer.name}.`;
+        
+        const popupContent = `
+=== ${flower.name} ===
+
+${description}
+
+Petani: ${farmer.name}
+Lokasi: ${farmer.address}
+Spesialisasi: ${farmer.specialization}
+
+Untuk menanyakan harga dan ketersediaan bunga ini, silakan hubungi petani langsung melalui WhatsApp.
+        `;
+        
+        alert(popupContent);
+    };
+
+    // Render bunga pertama kali
+    console.log("🚀 Starting initial flower render...");
     renderFlowersSlider();
-  }, 3000);
+
+    // Auto-rotate setiap 4 detik (hanya jika ada lebih dari itemsPerPage bunga)
+    if (farmerFlowers.length > itemsPerPage) {
+        const rotateInterval = setInterval(() => {
+            console.log("🔄 Auto-rotating flowers...");
+            currentIndex += itemsPerPage;
+            if (currentIndex >= farmerFlowers.length) {
+                currentIndex = 0;
+                console.log("↩️ Reset to beginning");
+            }
+            renderFlowersSlider();
+        }, 4000);
+        
+        console.log("✅ Auto-rotate interval set (every 4 seconds)");
+    } else {
+        console.log("ℹ️ Auto-rotate disabled (not enough flowers)");
+    }
+    
+    console.log("=== INITIALIZATION COMPLETE ===");
+});
+
 </script>
 
 

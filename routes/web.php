@@ -17,3 +17,7 @@ Route::get('/farmer-list', function () {
 Route::get('/farmer-detail', function () {
     return view('farmer-detail');
 });
+
+Route::get('/about', function () {
+    return view('about');
+});

@@ -24,7 +24,7 @@
             <a href="{{ url('/') }}">Home</a>
             <a href="#about">About</a>
             <a href="{{ url('/flower-list') }}">Flower</a>
-            <a href="{{ url('/farmer-list') }}">Marketplace</a>
+            <a href="{{ url('/farmer-list') }}">Farmer</a>
             <a href="#gallery">Gallery</a>
         </nav>
     </header>
@@ -35,7 +35,7 @@
     </div>
     <div class="section">
     <img class="bunga-krisan-1" src="img/icon.png" />
-    <div class="heading-2-a-summer-to-grow-explore">Koleksi Bunga</div>
+    <div class="heading-2-a-summer-to-grow-explore">Koleksi Bunga Krisan</div>
     <div class="desa-tutur-kabupaten-pasuruan2">
       Desa Tutur Kabupaten Pasuruan
     </div>
@@ -90,7 +90,7 @@
     <div class="pop-up" id="popup-detail" style="display:none;">
       <div class="rectangle-4">
         <div class="heading-2-a-summer-to-grow-explore" id="popup-title">Bunga Krisan</div>
-        <img class="x-circle" src="x-circle0.svg" id="close-popup" />
+        <img class="x-circle" src="img/ic_close.png" id="close-popup" />
         <div class="popup-content-flex">
           <img class="rectangle-5" src="rectangle-50.png" id="popup-img" />
           <div class="temukan-pesona-abadi-dari-bunga-krisan" id="popup-desc"></div>
@@ -100,46 +100,8 @@
      
     </div>
     <script src="{{ asset('js/script.js') }}"></script>
+     <script src="{{ asset('js/data-flower.js') }}"></script>
     <script>
-        const flowers = [
-            {
-                title: "Krisan Putih",
-                description: "Krisan putih melambangkan kemurnian dan ketulusan.",
-                image: "rectangle-20.png",
-                detail: "Lihat detail"
-            },
-            {
-                title: "Krisan Kuning",
-                description: "Krisan kuning ceria dan segar, membawa kebahagiaan.",
-                image: "rectangle-21.png",
-                detail: "Lihat detail"
-            },
-            {
-                title: "Krisan Merah",
-                description: "Krisan merah penuh semangat, cocok untuk hadiah.",
-                image: "rectangle-22.png",
-                detail: "Lihat detail"
-            },
-            {
-                title: "Krisan Ungu",
-                description: "Krisan ungu tampil elegan dan misterius.",
-                image: "rectangle-23.png",
-                detail: "Lihat detail"
-            },
-            {
-                title: "Krisan Pink",
-                description: "Krisan pink lembut, simbol cinta dan kasih sayang.",
-                image: "rectangle-24.png",
-                detail: "Lihat detail"
-            },
-            {
-                title: "Krisan Oranye",
-                description: "Krisan oranye ceria, cocok untuk dekorasi pesta.",
-                image: "rectangle-25.png",
-                detail: "Lihat detail"
-            }
-        ];
-
         let cardsHtml = "";
         flowers.forEach((flower, idx) => {
             cardsHtml += `

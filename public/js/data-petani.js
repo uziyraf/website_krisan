@@ -1,18 +1,20 @@
-[
+const farmers =[
   {
     "id": 1,
-    "name": "Uzi",
+    "name": "Sudartono",
     "address": "Tutur - Pasuruan",
     "mapLink": "https://www.google.com/maps?q=Tutur,+Pasuruan",
     "specialization": "Spesialis Bunga Krisan",
     "description": "Petani berpengalaman, ahli budidaya Krisan sejak 2010.",
-    "image": "img/uzi.jpg",
+    "image": "img/pak kasun.JPG",
     "story": "Sejak tahun 1995, saya, Uzi, telah mendedikasikan hidup...",
     "whatsapp": "6281357853271",
     "flowers": [
-      { "name": "Krisan Merah", "image": "img/krisan-merah.jpg" },
-      { "name": "Krisan Kuning", "image": "img/krisan-kuning.jpg" }
-    ]
+      { "name": "Nismara Pink", "image": "img/NismaraPink.JPG" },
+      { "name": "Fiji Kuning", "image": "img/FijiKuning.JPG" },
+      { "name": "Puma Putih", "image": "img/PumaPutih].JPG" },
+    ],
+    "detail": "Lihat Detail"
   },
   {
     "id": 2,
@@ -25,9 +27,10 @@
     "story": "Saya, Sari, petani mawar yang fokus pada kualitas dan kesegaran...",
     "whatsapp": "6281234567890",
     "flowers": [
-      { "name": "Mawar Putih", "image": "img/mawar-putih.jpg" },
+      { "name": "Mawar Putih", "image": "img/NismaraPink.JPG" },
       { "name": "Mawar Pink", "image": "img/mawar-pink.jpg" }
-    ]
+    ],
+    "detail": "Lihat Detail"
   },
   {
     "id": 3,
@@ -41,7 +44,8 @@
     "whatsapp": "6282123456789",
     "flowers": [
       { "name": "Anggrek Bulan", "image": "img/anggrek-bulan.jpg" }
-    ]
+    ],
+    "detail": "Lihat Detail"
   },
   {
     "id": 4,
@@ -55,7 +59,8 @@
     "whatsapp": "6285712345678",
     "flowers": [
       { "name": "Melati Putih", "image": "img/melati.jpg" }
-    ]
+    ],
+    "detail": "Lihat Detail"
   },
   {
     "id": 5,
@@ -69,7 +74,8 @@
     "whatsapp": "6285123456789",
     "flowers": [
       { "name": "Bunga Matahari", "image": "img/matahari.jpg" }
-    ]
+    ],
+    "detail": "Lihat Detail"
   },
   {
     "id": 6,
@@ -83,7 +89,8 @@
     "whatsapp": "6281112345678",
     "flowers": [
       { "name": "Lavender", "image": "img/lavender.jpg" }
-    ]
+    ],
+    "detail": "Lihat Detail"
   },
   {
     "id": 7,
@@ -97,7 +104,8 @@
     "whatsapp": "6287771234567",
     "flowers": [
       { "name": "Dandelion", "image": "img/dandelion.jpg" }
-    ]
+    ],
+    "detail": "Lihat Detail"
   },
   {
     "id": 8,
@@ -111,7 +119,8 @@
     "whatsapp": "6281223456789",
     "flowers": [
       { "name": "Bougenville", "image": "img/bougenville.jpg" }
-    ]
+    ],
+    "detail": "Lihat Detail"
   },
   {
     "id": 9,
@@ -125,7 +134,8 @@
     "whatsapp": "6289112233445",
     "flowers": [
       { "name": "Lily Putih", "image": "img/lily.jpg" }
-    ]
+    ],
+    "detail": "Lihat Detail"
   },
   {
     "id": 10,
@@ -139,6 +149,7 @@
     "whatsapp": "6288881122334",
     "flowers": [
       { "name": "Edelweiss", "image": "img/edelweiss.jpg" }
-    ]
+    ],
+    "detail": "Lihat Detail"
   }
 ]

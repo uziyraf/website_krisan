@@ -22,7 +22,7 @@
             <a href="{{ url('/') }}">Home</a>
             <a href="#about">About</a>
             <a href="{{ url('/flower-list') }}">Flower</a>
-            <a href="{{ url('/farmer-list') }}">Marketplace</a>
+            <a href="{{ url('/farmer-list') }}">Farmer</a>
             <a href="#gallery">Gallery</a>
         </nav>
     </header>
@@ -79,39 +79,9 @@
             <a href="#">Kebijakan Privasi</a>
         </div>
     </footer>
+         <script src="{{ asset('js/data-petani.js') }}"></script>
     <script>
-            const farmers = [
-                {
-                    name: "Uzi",
-                    specialization: "Spesialis Bunga Krisan",
-                    description: "Petani berpengalaman, ahli budidaya Krisan sejak 2010.",
-                    image: "img/biliy.jpg",
-                    detail: "Lihat Profil & Bunga"
-                },
-                {
-                    name: "Rina",
-                    specialization: "Krisan Ungu & Pink",
-                    description: "Mengembangkan varietas Krisan warna-warni.",
-                    image: "profil-rina.png",
-                    detail: "Lihat Profil & Bunga"
-                },
-                {
-                    name: "Budi",
-                    specialization: "Krisan Putih",
-                    description: "Fokus pada kualitas dan ketahanan bunga.",
-                    image: "profil-budi.png",
-                    detail: "Lihat Profil & Bunga"
-                },
-                {
-                    name: "Sari",
-                    specialization: "Krisan Kuning",
-                    description: "Ahli teknik hidroponik Krisan.",
-                    image: "profil-sari.png",
-                    detail: "Lihat Profil & Bunga"
-                }
-                // Tambah data petani lain sesuai kebutuhan
-            ];
-
+        
             let farmerCardsHtml = "";
             farmers.forEach((farmer, idx) => {
                 farmerCardsHtml += `
@@ -120,8 +90,8 @@
                         <div class="heading-2-a-summer-to-grow-explore">${farmer.name}</div>
                         <div class="heading-2-a-summer-to-grow-explore">${farmer.specialization}</div>
                         <div class="profil-desc">${farmer.description}</div>
-                        <div class="button-lihat-detail2">
-                            <div class="heading-2-a-summer-to-grow-explore3">${farmer.detail}</div>
+                        <div class="button-lihat-detail2" onclick="window.location.href='/farmer-detail?id=${farmer.id}'">
+                        <div class="heading-2-a-summer-to-grow-explore3">${farmer.detail}</div>
                         </div>
                     </div>
                 `;
