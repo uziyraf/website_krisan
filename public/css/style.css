@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
 
 body {
     font-family: 'Segoe UI', sans-serif;
@@ -647,20 +646,25 @@ body {
 .massage-right {
   display: flex;
   flex-direction: column;
-  align-items: flex-end; /* agar semua isi ke kanan */
+    align-items: flex-end;
+    /* agar semua isi ke kanan */
 }
 
-.right-image2{
-width: 600px; /* atur besar gambar sesuai kebutuhan */
+.right-image2 {
+    width: 600px;
+    /* atur besar gambar sesuai kebutuhan */
   height: auto;
-  margin-bottom: 10px; /* jarak antar gambar */
+    margin-bottom: 10px;
+    /* jarak antar gambar */
 }
 
 .center {
   display: flex;
-  justify-content: center; /* center horizontal */
+    justify-content: center;
+    /* center horizontal */
   
-  background-color: cornsilk; /* warna latar belakang */
+    background-color: cornsilk;
+    /* warna latar belakang */
            
   width: 100%;
 }
@@ -672,7 +676,6 @@ width: 600px; /* atur besar gambar sesuai kebutuhan */
 
 
 
-/* boxgren */
 .green-box {
   display: flex;
   align-items: center;
@@ -689,7 +692,6 @@ width: 600px; /* atur besar gambar sesuai kebutuhan */
   background-color: white;
   margin: 0 15px;
 }
-
 
 
 /*halaman flower-list*/
@@ -1043,6 +1045,7 @@ body {
   text-align: center;
   margin-top: 32px;
   margin-bottom: 12px;
+  
 }
 
 .x-circle {
@@ -1174,6 +1177,35 @@ body {
     width: 98vw;
     max-width: 400px;
   }
+
+.text-content h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.text-content p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-list,
+.right-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-list li,
+.right-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
 
@@ -1185,4 +1217,237 @@ footer {
     padding: 12px 8px;
     font-size: 13px;
     font-family: Arial, sans-serif;
+}
+
+
+
+
+/* halaman about */
+.about {
+    min-height: 100vh;
+    padding: 60px 20px 80px;
+    /* Hapus padding kiri 200px */
+    background: url('../img/Container.png') no-repeat center center / cover;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Tengah vertikal */
+    align-items: center;
+    /* Tengah horizontal */
+    text-align: center;
+    gap: 0px;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.about h1,
+.about p,
+.about button {
+    z-index: 1;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.about h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 85px;
+}
+
+.about p {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+}
+
+/*  */
+.about-extra {
+    padding: 60px 20px;
+    background-color: cornsilk;
+}
+
+.about-extra-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.about-extra-image img {
+    width: 100%;
+    max-width: 500px;
+    /* border-radius: 10px; */
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(-70px);
+    /* geser 20px ke kiri */
+}
+
+.about-extra-text {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+}
+
+.about-extra-text h2 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #004b28;
+}
+
+.about-extra-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+/*  */
+.about-extra-bottom-text {
+    background-color: cornsilk;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 0;
+    /* hilangkan jarak luar */
+}
+
+.about-extra-bottom-text h3 {
+    font-size: 50px;
+    margin-bottom: 60px;
+    color: #004b28;
+}
+
+.about-extra-bottom-text p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: 0 auto;
+    /* biar teks paragraf tetap rapi di tengah */
+    line-height: 1.6;
+    font-weight: bold;
+}
+
+/*  */
+.about-extra-image-text {
+    background-color: cornsilk;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.about-extra-image-text img {
+    width: 900px;
+    /* ukuran tetap */
+    max-width: 100%;
+    /* biar tetap responsif di layar kecil */
+    height: auto;
+    /* proporsi gambar tetap */
+}
+
+
+.about-extra-image-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 20px auto 0;
+    font-weight: bold;
+}
+
+/*  */
+.line-text-about {
+    display: flex;
+    align-items: center;
+    /* sejajarkan garis & teks di tengah vertikal */
+    justify-content: center;
+    /* posisikan di tengah horizontal */
+    background-color: cornsilk;
+    /* background sama seperti tadi */
+    padding: 40px 20px;
+    /* jarak dalam */
+}
+
+.line-about {
+    width: 7px;
+    /* ketebalan garis */
+    height: 150px;
+    /* panjang garis */
+    background-color: #004b28;
+    margin-right: 15px;
+    /* jarak antara garis dan teks */
+}
+
+.line-text-about p {
+    margin: 0;
+    font-size: 30px;
+    color: #333;
+    font-family: 'Swanky and Moo Moo', cursive;
+}
+
+/*  */
+.about-image {
+    background-color: cornsilk;
+    /* Warna background */
+    text-align: center;
+    /* Posisi gambar di tengah */
+    padding: 40px 20px;
+    /* Jarak dalam */
+}
+
+.about-image img {
+    width: 1100px;
+    /* Lebar gambar */
+    height: auto;
+    /* Tinggi otomatis sesuai rasio */
+    border-radius: 10px;
+    /* Sudut gambar membulat */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* Efek bayangan */
+}
+
+/*  */
+.bunga-about {
+    background-color: cornsilk;
+    /* Sama seperti background sebelumnya */
+    text-align: center;
+    /* Semua isi div rata tengah */
+    padding: 50px 20px;
+    /* Jarak dalam */
+}
+
+.bunga-about .icon-about {
+    width: 150px;
+    /* Ukuran ikon */
+    height: auto;
+    /* Proporsi terjaga */
+    margin-bottom: 20px;
+    /* Jarak bawah ikon */
+}
+
+.bunga-about h1 {
+    color: #004b28;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+
+.bunga-about p {
+  color: #000;
+  font-size: 16px;
+  max-width: 600px;
+  /* Biar teks tidak terlalu melebar */
+  margin: 0 auto;
+  /* Teks berada di tengah */
+  line-height: 1.6;
+  font-weight: bold;
+}
+}
 }
