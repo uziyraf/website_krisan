@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Calon engineer</title>
+    <title>Beranda</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@
     </section>
 
     <section class="hero-caption">
-        <img src="img/icon.png" alt="Bunga Krisan" class="flower-icon"> <!-- Gambar bunga -->
+        <img src="img/icon.png" alt="Bunga Krisan" class="flower-icon">
         <h2>Kampung Bunga Krisan</h2>
         <p>Desa Tutur Kabupaten Pasuruan</p>
         <button class="explore-btn" onclick="scrollToFlower()">Explore Our Flower</button>
@@ -124,22 +124,21 @@
         </div>
     </section>
 
-<section>
-  <div class="galery">
-    <h1>Our<br>Galery</h1>
+    <section>
+        <div class="galery">
+            <h1>Our<br>Galery</h1>
 
-    <div class="gallery-single">
-      <img src="img/Group.png" alt="Foto Galery Kiri" />
-    </div>
+            <div class="gallery-single">
+                <img src="img/Group.png" alt="Foto Galery Kiri" />
+            </div>
 
-    <div class="vertical-line"></div>
+            <div class="vertical-line"></div>
 
-    <div class="gallery-single right-image">
-      <img src="img/Section.png" alt="Foto Galery Kanan" />
-    </div>
-  </div>
-</section>
-
+            <div class="gallery-single right-image">
+                <img src="img/Section.png" alt="Foto Galery Kanan" />
+            </div>
+        </div>
+    </section>
 
 
 
@@ -147,16 +146,77 @@
 
 
     <section>
-        <div class="massage">
-            <h1>massage</h1>
+
+        <div class="massage-container">
+            <div class="massage-left">
+                <h2>Send Us A Message</h2>
+                <p>+62 813-3315-4747</p>
+                <form class="contact-form">
+                    <input type="email" placeholder="Email*" required />
+
+                    <p class="form-label">HOW DID YOU HEAR ABOUT US?*</p>
+
+                    <button type="button" class="info-button">Friend/Camp Fami</button>
+
+                    <textarea placeholder="Your Message*" required></textarea>
+
+                    <button type="submit" class="submit-button">Submit</button>
+                </form>
+
+            </div>
+
+            <div class="massage-right">
+                <div class="location-text">
+                    <h3>Location</h3>
+                    <p>Desa Tutur, Kabupaten Pasuruan</p>
+                </div>
+                <img src="img/Figure (2).png" alt="Contact Illustration" class="right-image2" />
+            </div>
         </div>
+        <div class="center">
+            <img src="img/Group (2).png" alt="Gambar Tambahan" class="bottom-image2" />
+        </div>
+
     </section>
 
 
+    <section class="image-and-box">
+  <div class="green-box">
+    <!-- Kiri -->
+    <div class="left-column">
+     
+      <ul class="left-list">
+        <li>About Us</li>
+        <li>Bunga</li>
+        <li>Marketplace</li>
+        <li>Gallery</li>
+        <li>Join Our Team</li>
+      </ul>
+    </div>
+    <!-- Garis Pemisah -->
+    <div class="vertical-line2"></div>
+    <!-- Tengah (Tetap yang lama) -->
+    <div class="text-content">
+      <h1>Tank You</h1>
+      <p>Krisan Tutur: Mekar Lebih Lama, Indah <br> Sepanjang Masa</p>
+    </div>
+    <!-- Garis Pemisah -->
+    <div class="vertical-line2"></div>
+    <!-- Kanan -->
+    <div class="right-column">
+      <ul class="right-list">
+        <li>Send Us A massage</li>
+        <li>+6281333154747</li>
+        <li>Desa Tutur Kabupaten</br>Pasuruan</li>
+      </ul>
+    </div>
 
+  </div>
+</section>
+    </section>
     <!-- Footer -->
     <footer class="footer">
-        &copy; 2025 Davi Florist - Semua Hak Dilindungi
+        &copy; KampungBungaKrisan.All Rights Reserved. Privasy Policy
     </footer>
 
     <script src="{{ asset('js/script.js') }}"></script>

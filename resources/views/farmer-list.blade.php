@@ -20,7 +20,7 @@
     <header class="navbar">
         <nav>
             <a href="{{ url('/') }}">Home</a>
-            <a href="#about">About</a>
+            <a href="{{ url('/about') }}">About</a>
             <a href="{{ url('/flower-list') }}">Flower</a>
             <a href="{{ url('/farmer-list') }}">Farmer</a>
             <a href="#gallery">Gallery</a>

@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
 
 body {
     font-family: 'Segoe UI', sans-serif;
@@ -631,17 +630,28 @@ body {
 
 
 .massage-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 50px;
-    background-color: cornsilk;
-    height: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px;
+  background-color: cornsilk;
+  height: 800px;
 }
 
 .massage-left {
-    flex: 1;
-    margin-right: 40px;
+  flex: 1;
+  margin-right: 40px;
+}
+
+.location-text {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  /* background-color: rgba(44, 87, 71, 0.8); transparansi hijau gelap */
+  color:#244737;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: right;
 }
 
 .massage-left h2 {
@@ -1195,6 +1205,7 @@ body {
   text-align: center;
   margin-top: 32px;
   margin-bottom: 12px;
+  
 }
 
 .x-circle {
@@ -1326,6 +1337,35 @@ body {
     width: 98vw;
     max-width: 400px;
   }
+
+.text-content h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.text-content p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.left-column,
+.right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-list,
+.right-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-list li,
+.right-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
 }
 
 
@@ -1558,13 +1598,18 @@ footer {
     margin-bottom: 15px;
 }
 
+
 .bunga-about p {
-    color: #000;
-    font-size: 16px;
-    max-width: 600px;
-    /* Biar teks tidak terlalu melebar */
-    margin: 0 auto;
-    /* Teks berada di tengah */
-    line-height: 1.6;
-    font-weight: bold;
+  color: #000;
+  font-size: 16px;
+  max-width: 600px;
+  /* Biar teks tidak terlalu melebar */
+  margin: 0 auto;
+  /* Teks berada di tengah */
+  line-height: 1.6;
+  font-weight: bold;
+   
 }
+}
+}
+
