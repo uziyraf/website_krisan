@@ -185,7 +185,6 @@
 
     <section class="image-and-box">
   <div class="green-box">
-    
     <!-- Kiri -->
     <div class="left-column">
      
@@ -197,19 +196,15 @@
         <li>Join Our Team</li>
       </ul>
     </div>
-
     <!-- Garis Pemisah -->
     <div class="vertical-line2"></div>
-
     <!-- Tengah (Tetap yang lama) -->
     <div class="text-content">
       <h1>Tank You</h1>
       <p>Krisan Tutur: Mekar Lebih Lama, Indah <br> Sepanjang Masa</p>
     </div>
-
     <!-- Garis Pemisah -->
     <div class="vertical-line2"></div>
-
     <!-- Kanan -->
     <div class="right-column">
       <ul class="right-list">
@@ -221,15 +216,7 @@
 
   </div>
 </section>
-
-
-
-
     </section>
-
-
-
-
     <!-- Footer -->
     <footer class="footer">
         &copy; KampungBungaKrisan.All Rights Reserved. Privasy Policy
