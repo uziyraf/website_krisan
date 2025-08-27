@@ -65,7 +65,7 @@
 
     <div class="footer-divider"></div>
 
-    <div class="footer-column center">
+    <div class="footer-column">
       <h2>Terima Kasih</h2>
       <p><em>Krisan Tutur: Mekar Lebih Lama, Indah Sepanjang Masa</em></p>
     </div>

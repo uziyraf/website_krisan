@@ -334,7 +334,6 @@ Untuk menanyakan harga dan ketersediaan bunga ini, silakan hubungi petani langsu
     
     console.log("=== INITIALIZATION COMPLETE ===");
 });
-
 </script>
 
 

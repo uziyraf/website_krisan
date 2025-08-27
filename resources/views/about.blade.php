@@ -14,12 +14,12 @@
 <body>
 
     <!-- Navbar -->
-    <header class="navbar">
+     <header class="navbar">
         <nav>
             <a href="{{ url('/') }}">Home</a>
             <a href="{{ url('/about') }}">About</a>
             <a href="{{ url('/flower-list') }}">Flower</a>
-            <a href="{{ url('/farmer-list') }}">Marketplace</a>
+            <a href="{{ url('/farmer-list') }}">Farmer</a>
             <a href="#gallery">Gallery</a>
         </nav>
     </header>
@@ -82,6 +82,46 @@
             TANGAN-TANGAN TERAMPIL DAN HATI YANG TULUS. MEREKA</br> ADALAH PAHLAWAN KAMI.
         </p>
     </div>
+
+      
+  <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-column">
+            <ul>
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Bunga</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Galeri</a></li>
+                <li><a href="#">Bergabung dengan Kami</a></li>
+            </ul>
+
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-column">
+            <h2>Terima Kasih</h2>
+            <p><em>Krisan Tutur: Mekar Lebih Lama, Indah Sepanjang Masa</em></p>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-column right">
+            <h4>Kirim Pesan kepada Kami →</h4>
+            <p>(845) 356–1234</p>
+            <p>Desa Tutur<br>Kabupaten Pasuruan</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 KampungBungaKrisan. Seluruh Hak Cipta Dilindungi.</p>
+            <a href="#">Kebijakan Privasi</a>
+        </div>
+    </footer>
 </body>
 
 </html>

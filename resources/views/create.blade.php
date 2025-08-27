@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <title>Tambah Petani Baru</title>
+    <style>
+        body { font-family: sans-serif; margin: 2rem; }
+        .form-group { margin-bottom: 1rem; }
+        label { display: block; margin-bottom: 0.5rem; }
+        input, textarea { width: 300px; padding: 0.5rem; }
+        .alert { padding: 1rem; margin-bottom: 1rem; border-radius: 5px; }
+        .alert-success { background-color: #d4edda; color: #155724; }
+        .alert-danger { background-color: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+
+    <h1>Form Tambah Petani Baru</h1>
+
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
+    <form action="{{ route('farmers.store') }}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="form-group">
+            <label for="name">Nama Petani</label>
+            <input type="text" id="name" name="name" value="{{ old('name') }}" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Alamat</label>
+            <input type="text" id="address" name="address" value="{{ old('address') }}" required>
+        </div>
+        <div class="form-group">
+            <label for="specialization">Spesialisasi</label>
+            <input type="text" id="specialization" name="specialization" value="{{ old('specialization') }}" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Deskripsi Singkat</label>
+            <textarea id="description" name="description" required>{{ old('description') }}</textarea>
+        </div>
+        <div class="form-group">
+            <label for="story">Cerita</label>
+            <textarea id="story" name="story" required>{{ old('story') }}</textarea>
+        </div>
+         <div class="form-group">
+            <label for="whatsapp">Nomor WhatsApp</label>
+            <input type="text" id="whatsapp" name="whatsapp" value="{{ old('whatsapp') }}" required>
+        </div>
+        <div class="form-group">
+            <label for="image">Foto Petani</label>
+            <input type="file" id="image" name="image" required>
+        </div>
+        <div class="form-group">
+        <h4>Pilih Bunga yang Ditanam Petani Ini</h4>
+        <select name="flowers[]" id="flowers-select" multiple="multiple" style="width: 315px;">
+            @foreach ($flowers as $flower)
+                <option value="{{ $flower->id }}">{{ $flower->name }}</option>
+            @endforeach
+        </select>
+        </div>
+        <button type="submit">Simpan Petani</button>
+    </form>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Terapkan Select2 pada elemen dengan ID 'flowers-select'
+        $('#flowers-select').select2({
+            placeholder: "Cari dan pilih bunga...",
+            allowClear: true
+        });
+    });
+</script>
+</body>
+</html>

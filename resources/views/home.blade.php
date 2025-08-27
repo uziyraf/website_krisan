@@ -19,7 +19,7 @@
 <body>
 
     <!-- Navbar -->
-    <header class="navbar">
+     <header class="navbar">
         <nav>
             <a href="{{ url('/') }}">Home</a>
             <a href="{{ url('/about') }}">About</a>
@@ -140,83 +140,44 @@
         </div>
     </section>
 
+      
+  <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-column">
+            <ul>
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Bunga</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Galeri</a></li>
+                <li><a href="#">Bergabung dengan Kami</a></li>
+            </ul>
 
-
-
-
-
-    <section>
-
-        <div class="massage-container">
-            <div class="massage-left">
-                <h2>Send Us A Message</h2>
-                <p>+62 813-3315-4747</p>
-                <form class="contact-form">
-                    <input type="email" placeholder="Email*" required />
-
-                    <p class="form-label">HOW DID YOU HEAR ABOUT US?*</p>
-
-                    <button type="button" class="info-button">Friend/Camp Fami</button>
-
-                    <textarea placeholder="Your Message*" required></textarea>
-
-                    <button type="submit" class="submit-button">Submit</button>
-                </form>
-
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
             </div>
 
-            <div class="massage-right">
-                <div class="location-text">
-                    <h3>Location</h3>
-                    <p>Desa Tutur, Kabupaten Pasuruan</p>
-                </div>
-                <img src="img/Figure (2).png" alt="Contact Illustration" class="right-image2" />
+            <div class="footer-divider"></div>
+
+            <div class="footer-column">
+            <h2>Terima Kasih</h2>
+            <p><em>Krisan Tutur: Mekar Lebih Lama, Indah Sepanjang Masa</em></p>
+            </div>
+
+            <div class="footer-divider"></div>
+
+            <div class="footer-column right">
+            <h4>Kirim Pesan kepada Kami →</h4>
+            <p>(845) 356–1234</p>
+            <p>Desa Tutur<br>Kabupaten Pasuruan</p>
             </div>
         </div>
-        <div class="center">
-            <img src="img/Group (2).png" alt="Gambar Tambahan" class="bottom-image2" />
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 KampungBungaKrisan. Seluruh Hak Cipta Dilindungi.</p>
+            <a href="#">Kebijakan Privasi</a>
         </div>
-
-    </section>
-
-
-    <section class="image-and-box">
-  <div class="green-box">
-    <!-- Kiri -->
-    <div class="left-column">
-     
-      <ul class="left-list">
-        <li>About Us</li>
-        <li>Bunga</li>
-        <li>Marketplace</li>
-        <li>Gallery</li>
-        <li>Join Our Team</li>
-      </ul>
-    </div>
-    <!-- Garis Pemisah -->
-    <div class="vertical-line2"></div>
-    <!-- Tengah (Tetap yang lama) -->
-    <div class="text-content">
-      <h1>Tank You</h1>
-      <p>Krisan Tutur: Mekar Lebih Lama, Indah <br> Sepanjang Masa</p>
-    </div>
-    <!-- Garis Pemisah -->
-    <div class="vertical-line2"></div>
-    <!-- Kanan -->
-    <div class="right-column">
-      <ul class="right-list">
-        <li>Send Us A massage</li>
-        <li>+6281333154747</li>
-        <li>Desa Tutur Kabupaten</br>Pasuruan</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-    </section>
-    <!-- Footer -->
-    <footer class="footer">
-        &copy; KampungBungaKrisan.All Rights Reserved. Privasy Policy
     </footer>
 
     <script src="{{ asset('js/script.js') }}"></script>
