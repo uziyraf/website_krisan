@@ -12,7 +12,7 @@ class FlowerController extends Controller
      */
     public function create()
     {
-        return view('createflower');
+        return view('admin.createflower');
     }
 
     /**

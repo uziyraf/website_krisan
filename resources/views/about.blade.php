@@ -16,11 +16,11 @@
     <!-- Navbar -->
      <header class="navbar">
         <nav>
-            <a href="{{ url('/') }}">Home</a>
-            <a href="{{ url('/about') }}">About</a>
-            <a href="{{ url('/flower-list') }}">Flower</a>
-            <a href="{{ url('/farmer-list') }}">Farmer</a>
-            <a href="#gallery">Gallery</a>
+            <a href="{{ url('/') }}">Beranda</a>
+            <a href="{{ url('/about') }}">Tentang</a>
+            <a href="{{ url('/flower-list') }}">Bunga</a>
+            <a href="{{ url('/farmer-list') }}">Anggota</a>
+            <a href="#gallery">Galeri</a>
         </nav>
     </header>
     <section id="about" class="about">

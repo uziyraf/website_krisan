@@ -21,11 +21,11 @@
   <div class="flower-list-page">
      <header class="navbar">
         <nav>
-            <a href="{{ url('/') }}">Home</a>
-            <a href="{{ url('/about') }}">About</a>
-            <a href="{{ url('/flower-list') }}">Flower</a>
-            <a href="{{ url('/farmer-list') }}">Farmer</a>
-            <a href="#gallery">Gallery</a>
+            <a href="{{ url('/') }}">Beranda</a>
+            <a href="{{ url('/about') }}">Tentang</a>
+            <a href="{{ url('/flower-list') }}">Bunga</a>
+            <a href="{{ url('/farmer-list') }}">Anggota</a>
+            <a href="#gallery">Galeri</a>
         </nav>
     </header>
   <div class="main">
@@ -40,11 +40,28 @@
       Desa Tutur Kabupaten Pasuruan
     </div>
     <div class="link7">
-      <div class="explore-our-flower">Explore OUR Flower</div>
+      <div class="explore-our-flower">Jelajahi Koleksi Bunga Kami</div>
     </div>
   </div>
   
-  <div class="flower-card-grid" id="flower-card-container"></div>
+  <div class="flower-card-grid" id="flower-card-container">
+    @foreach ($flowers as $flower)
+        <div class="card">
+            <img class="rectangle-2" src="{{ asset('storage/' . $flower->image) }}" alt="{{ $flower->name }}" />
+            <div class="heading-2-a-summer-to-grow-explore">{{ $flower->name }}</div>
+            <div class="bunga-krisan-atau-seruni-adalah-simbol-keanggunan-klasik-dengan-ratusan-kelopak-yang-tersusun-rimbun-dan-sempurna-bunga-ini-memancarkan-pesona-yang-tak-lekang-oleh-waktu">
+                {{ Str::words($flower->description, 15, '...') }}
+            </div>
+            <div class="button-lihat-detail">
+                {{-- Kita ubah onclick untuk mengirim data langsung --}}
+                <div class="heading-2-a-summer-to-grow-explore2" 
+                     onclick="showPopup('{{ $flower->name }}', '{{ asset('storage/' . $flower->image) }}', '{{ e($flower->description) }}')">
+                    Lihat Detail
+                </div>
+            </div>
+        </div>
+    @endforeach
+</div>
 
   <footer class="footer">
   <div class="footer-top">
@@ -99,42 +116,21 @@
     </div>
      
     </div>
-    <script src="{{ asset('js/script.js') }}"></script>
-     <script src="{{ asset('js/data-flower.js') }}"></script>
+
     <script>
-        let cardsHtml = "";
-        flowers.forEach((flower, idx) => {
-            cardsHtml += `
-                <div class="card">
-                    <img class="rectangle-2" src="${flower.image}" alt="${flower.title}" />
-                    <div class="heading-2-a-summer-to-grow-explore">${flower.title}</div>
-                    <div class="bunga-krisan-atau-seruni-adalah-simbol-keanggunan-klasik-dengan-ratusan-kelopak-yang-tersusun-rimbun-dan-sempurna-bunga-ini-memancarkan-pesona-yang-tak-lekang-oleh-waktu">
-                        ${flower.description}
-                    </div>
-                    <div class="button-lihat-detail">
-                        <div class="heading-2-a-summer-to-grow-explore2" onclick="showPopup(${idx})">${flower.detail}</div>
-                    </div>
-                </div>
-            `;
-        });
+    // Pop up logic BARU
+    function showPopup(name, imageUrl, description) {
+        document.getElementById('popup-title').textContent = name;
+        document.getElementById('popup-img').src = imageUrl;
+        document.getElementById('popup-desc').innerHTML = description + "<br><br>" +
+            `"Temukan pesona abadi dari bunga Krisan, atau yang juga dikenal sebagai Seruni. Setiap tangkainya dimahkotai oleh ratusan kelopak yang tersusun sempurna, menciptakan tampilan yang mewah dan penuh tekstur. Tersedia dalam spektrum warna yang memesona—dari putih murni yang melambangkan kejujuran, kuning ceria sebagai tanda persahabatan, hingga ungu anggun yang memancarkan kemewahan.<br>Bunga Krisan tidak hanya indah dipandang, tetapi juga sarat akan makna positif seperti kebahagiaan dan kehidupan yang panjang. Jadikan bunga ini sebagai pusat perhatian di meja makan Anda, rangkaian bunga ucapan selamat, atau sebagai hadiah yang menunjukkan ketulusan hati Anda kepada orang yang spesial."`;
+        document.getElementById('popup-detail').style.display = 'flex';
+    }
 
-        document.getElementById('flower-card-container').innerHTML = cardsHtml;
-
-        
-// Pop up logic
-function showPopup(idx) {
-    const flower = flowers[idx];
-    document.getElementById('popup-title').textContent = flower.title;
-    document.getElementById('popup-img').src = flower.image;
-    document.getElementById('popup-desc').innerHTML = flower.description + "<br><br>" +
-      `"Temukan pesona abadi dari bunga Krisan, atau yang juga dikenal sebagai Seruni. Setiap tangkainya dimahkotai oleh ratusan kelopak yang tersusun sempurna, menciptakan tampilan yang mewah dan penuh tekstur. Tersedia dalam spektrum warna yang memesona—dari putih murni yang melambangkan kejujuran, kuning ceria sebagai tanda persahabatan, hingga ungu anggun yang memancarkan kemewahan.<br>Bunga Krisan tidak hanya indah dipandang, tetapi juga sarat akan makna positif seperti kebahagiaan dan kehidupan yang panjang. Jadikan bunga ini sebagai pusat perhatian di meja makan Anda, rangkaian bunga ucapan selamat, atau sebagai hadiah yang menunjukkan ketulusan hati Anda kepada orang yang spesial."`;
-    document.getElementById('popup-detail').style.display = 'flex';
-}
     document.getElementById('close-popup').onclick = function() {
-    document.getElementById('popup-detail').style.display = 'none';
-};
-
-</script>
+        document.getElementById('popup-detail').style.display = 'none';
+    };
+    </script>
 </body>
 </html>
 

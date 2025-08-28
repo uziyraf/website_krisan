@@ -18,77 +18,98 @@
 <body>
      <header class="navbar">
         <nav>
-            <a href="{{ url('/') }}">Home</a>
-            <a href="#about">About</a>
-            <a href="{{ url('/flower-list') }}">Flower</a>
-            <a href="{{ url('/farmer-list') }}">Farmer</a>
-            <a href="#gallery">Gallery</a>
+            <a href="{{ url('/') }}">Beranda</a>
+            <a href="{{ url('/about') }}">Tentang</a>
+            <a href="{{ url('/flower-list') }}">Bunga</a>
+            <a href="{{ url('/farmer-list') }}">Anggota</a>
+            <a href="#gallery">Galeri</a>
         </nav>
     </header>
 
     <section id="home" class="hero">
-     <div class="profile-image">
-        <div class="ellipse-wrapper">
-        <div class="ellipse-1"></div>
-        <img class="ellipse-2" src="img/biliy.jpg" alt="Foto profil">
+        <div class="profile-image">
+            <div class="ellipse-wrapper">
+                <div class="ellipse-1"></div>
+                <img class="ellipse-2" src="{{ asset('storage/' . $farmer->image) }}" alt="Foto profil {{ $farmer->name }}">
+            </div>
+            <div class="name-farmer">{{ $farmer->name }}</div>
+            <div class="group-2">
+                <img class="location-on" src="{{ asset('img/location.png') }}" alt="icon lokasi">
+                <a href="{{ $farmer->mapLink }}" class="link-address" target="_blank" rel="noopener noreferrer">{{ $farmer->address }}</a>
+            </div>
         </div>
-        <div class="name-farmer">Uzi</div>
-        <div class="group-2">
-        <img class="location-on" src="img/location.png" alt="icon lokasi">
-        <a href="#" class="link-address" target="_blank" rel="noopener noreferrer">Tutur-Pasuruan</a>
-        </div>
-    </div>
     </section>
 
     <section class="story-line">
-     <img class="bunga-krisan-1" src="img/icon.png" />
+        <img class="bunga-krisan-1" src="{{ asset('img/icon.png') }}" />
         <div class="heading-2-a-summer-to-grow-explore">Cerita Kami</div>
         <div class="desc-story">
-          Sejak tahun 1995, saya, Budi Santoso, telah mendedikasikan hidup untuk merawat
-          keindahan bunga di tanah subur Lembang. Bagi saya, bertani bukan hanya
-          pekerjaan, tetapi sebuah seni merawat kehidupan. Setiap bunga mawar dan
-          anggrek yang tumbuh di kebun ini adalah hasil dari kesabaran, cinta, dan
-          metode perawatan organik yang saya warisi dari keluarga.
+            {{ $farmer->story }}
         </div>
     </section>
 
-     <section class="section-3" id="flower-section-3">
-        <h2 class="heading-1-a-summer-to-grow-explore">Bunga Tersedia dikebun kami</h2>
-         <div class="carousel-container">
-            <div class="carousel-track" id="carousel-track">
-            <!-- Cards will be inserted here -->
-            <div class="flower-card-grid"></div>
+        <section class="section-3" id="flower-section-3">
+            <h2 class="heading-1-a-summer-to-grow-explore">Bunga Tersedia di kebun kami</h2>
+
+            <div class="carousel-container">
+                <button class="carousel-button prev-button">&#10094;</button>
+                <div class="carousel-track">
+                    
+                        @forelse ($farmer->bunga as $flower)
+                            {{-- Kode < class="card"> dari Bagian 1 ditaruh di sini --}}
+                            <div class="card">
+                                <img class="rectangle-2" src="{{ asset('storage/' . $flower->image) }}" alt="{{ $flower->name }}" />
+                                <div class="heading-2-a-summer-to-grow-explore">{{ $flower->name }}</div>
+                                <div class="bunga-krisan-atau-seruni-adalah-simbol-keanggunan-klasik">
+                                    {{ Str::words($flower->description, 15, '...') }}
+                                </div>
+                                <div class="button-lihat-detail">
+                                    <div class="heading-2-a-summer-to-grow-explore2" 
+                                        onclick="showFlowerPopup('{{ $flower->name }}', '{{ asset('storage/' . $flower->image) }}', '{{ e($flower->description) }}')">
+                                        Lihat Detail
+                                    </div>
+                                </div>
+                            </div>
+                        @empty
+                            <p>Petani ini belum memiliki data bunga.</p>
+                        @endforelse
+                </div>
+                <button class="carousel-button next-button">&#10095;</button>
+            </div>
+        </section>
+
+    <div class="pop-up" id="flower-popup" style="display:none;">
+        <div class="rectangle-4">
+            <div class="heading-2-a-summer-to-grow-explore" id="popup-title"></div>
+            <img class="x-circle" src="{{ asset('img/ic_close.png') }}" id="close-popup" />
+            <div class="popup-content-flex">
+                <img class="rectangle-5" src="" id="popup-img" />
+                <div class="temukan-pesona-abadi-dari-bunga-krisan" id="popup-desc"></div>
             </div>
         </div>
-     </section>
+    </div>
 
-     <section class="section-whatsapp">
+    <section class="section-whatsapp">
         <div class="rectangle-1">
-        <div class="heading-2-a-summer-to-grow-explore">
-            Pesan Langsung dari Petani
-        </div>
-        <div
-            class="desc-wa">
-            Klik tombol di bawah untuk terhubung langsung dengan saya via WhatsApp.
-            Tanyakan ketersediaan bunga, minta foto bunga terbaru, atau diskusikan
-            kebutuhan Anda. Saya siap membantu!
-        </div>
-        <div class="rectangle-8">
-             <div class="rectangle-8" onclick="window.open('https://wa.me/6281357853271', '_blank')">
-             <div class="hubungi-via-whats-app">Hubungi Via WhatsApp</div>
-             </div>
-        </div>
+            <div class="heading-2-a-summer-to-grow-explore">Pesan Langsung dari Petani</div>
+            <div class="desc-wa">
+                Klik tombol di bawah untuk terhubung langsung dengan saya via WhatsApp.
+                Tanyakan ketersediaan bunga, minta foto bunga terbaru, atau diskusikan
+                kebutuhan Anda. Saya siap membantu!
+            </div>
+            <div class="rectangle-8" onclick="window.open('https://wa.me/{{ $farmer->whatsapp }}', '_blank')">
+                <div class="hubungi-via-whats-app">Hubungi Via WhatsApp</div>
+            </div>
         </div>
     </section>
-
-      
+     
   <footer class="footer">
         <div class="footer-top">
             <div class="footer-column">
             <ul>
                 <li><a href="#">Tentang Kami</a></li>
                 <li><a href="#">Bunga</a></li>
-                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Anggota</a></li>
                 <li><a href="#">Galeri</a></li>
                 <li><a href="#">Bergabung dengan Kami</a></li>
             </ul>
@@ -101,7 +122,7 @@
 
             <div class="footer-divider"></div>
 
-            <div class="footer-column center">
+            <div class="footer-column">
             <h2>Terima Kasih</h2>
             <p><em>Krisan Tutur: Mekar Lebih Lama, Indah Sepanjang Masa</em></p>
             </div>
@@ -121,221 +142,80 @@
         </div>
     </footer>
 
-      <script src="{{ asset('js/data-petani.js') }}"></script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("=== FARMER DETAIL PAGE LOADED ===");
-    
-    // Debug: Cek apakah data farmers tersedia
-    console.log("typeof farmers:", typeof farmers);
-    
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get('id');
-    console.log("Farmer ID from URL:", id);
-
-    if (!id) {
-        document.querySelector('#home').innerHTML = '<p>ID petani tidak ditemukan di URL.</p>';
-        return;
-    }
-
-    // Cek apakah data farmers tersedia
-    if (typeof farmers === 'undefined') {
-        console.error("ERROR: Variable 'farmers' is not defined!");
-        document.querySelector('#home').innerHTML = '<p style="color: red; text-align: center; padding: 2rem;">Data petani tidak dapat dimuat. Periksa file data-petani.js</p>';
-        return;
-    }
-
-    const farmer = farmers.find(f => f.id == id);
-    console.log("Found farmer:", farmer);
-
-    if (!farmer) {
-        document.querySelector('#home').innerHTML = '<p>Data petani tidak ditemukan untuk ID: ' + id + '</p>';
-        return;
-    }
-
-    // Isi data petani ke dalam halaman
-    try {
-        // Update nama petani
-        const nameElement = document.querySelector('.name-farmer');
-        if (nameElement) nameElement.textContent = farmer.name;
-        
-        // Update alamat
-        const addressElement = document.querySelector('.link-address');
-        if (addressElement) {
-            addressElement.textContent = farmer.address;
-            if (farmer.mapLink) addressElement.setAttribute('href', farmer.mapLink);
-        }
-        
-        // Update foto profil
-        const imageElement = document.querySelector('.ellipse-2');
-        if (imageElement && farmer.image) imageElement.setAttribute('src', farmer.image);
-        
-        // Update cerita
-        const storyElement = document.querySelector('.desc-story');
-        if (storyElement) storyElement.textContent = farmer.story;
-        
-        // Update spesialisasi jika ada
-        const specializationElement = document.querySelector('.specialization');
-        if (specializationElement && farmer.specialization) {
-            specializationElement.textContent = farmer.specialization;
+    <script>
+        function showFlowerPopup(name, imageUrl, fullDescription) {
+            document.getElementById('popup-title').textContent = name;
+            document.getElementById('popup-img').src = imageUrl;
+            document.getElementById('popup-desc').textContent = fullDescription;
+            document.getElementById('flower-popup').style.display = 'flex';
         }
 
-        // Update WhatsApp link
-        if (farmer.whatsapp) {
-            const whatsappButtons = document.querySelectorAll('.rectangle-8');
-            whatsappButtons.forEach(button => {
-                button.setAttribute('onclick', `window.open('https://wa.me/${farmer.whatsapp}', '_blank')`);
-            });
-        }
-        
-        console.log("✅ Farmer data loaded successfully");
-    } catch (error) {
-        console.error("❌ Error loading farmer data:", error);
+        document.getElementById('close-popup').onclick = function() {
+            document.getElementById('flower-popup').style.display = 'none';
+        };
+
+        // Tambahkan ini di dalam tag <script> yang sudah ada
+    document.addEventListener("DOMContentLoaded", function() {
+    // 1. PERBAIKAN: Selector sekarang langsung menargetkan .carousel-track
+    const track = document.querySelector('.carousel-track');
+    const nextButton = document.querySelector('.next-button');
+    const prevButton = document.querySelector('.prev-button');
+
+    // Cek dulu apakah elemen-elemen carousel ada di halaman
+    if (!track || !nextButton || !prevButton) {
+        return; // Hentikan jika tidak ada carousel di halaman ini
     }
 
-    // BAGIAN BUNGA - Mengambil dari property flowers di farmer
-    console.log("=== LOADING FLOWER DATA ===");
-    
-    // Cek apakah farmer memiliki property flowers
-    if (!farmer.flowers) {
-        console.error("ERROR: Farmer doesn't have flowers property");
-        const container3 = document.querySelector('#flower-section-3 .flower-card-grid');
-        if (container3) {
-            container3.innerHTML = '<div style="text-align: center; color: orange; padding: 2rem;">Petani ini belum memiliki data bunga tersedia.</div>';
-        }
-        return;
-    }
-    
-    if (!Array.isArray(farmer.flowers)) {
-        console.error("ERROR: farmer.flowers is not an array:", farmer.flowers);
-        return;
-    }
-    
-    if (farmer.flowers.length === 0) {
-        console.error("ERROR: farmer.flowers array is empty");
-        const container3 = document.querySelector('#flower-section-3 .flower-card-grid');
-        if (container3) {
-            container3.innerHTML = '<div style="text-align: center; padding: 2rem;">Petani ini belum menambahkan bunga ke daftar.</div>';
-        }
-        return;
-    }
-    
-    // Ambil data bunga dari farmer
-    const farmerFlowers = farmer.flowers;
-    console.log("✅ Farmer flowers data found:", farmerFlowers.length + " flowers available");
-    console.log("Farmer flowers:", farmerFlowers);
-
-    // Cari container untuk bunga
-    const container3 = document.querySelector('#flower-section-3 .flower-card-grid');
-    if (!container3) {
-        console.error("ERROR: Container '.flower-card-grid' not found!");
-        return;
-    }
-
-    // Variabel untuk carousel
-    let currentIndex = 0;
+    const slides = Array.from(track.children);
     const itemsPerPage = 3;
 
-    // Function untuk render bunga
-    function renderFlowersSlider() {
-        console.log("--- Rendering flowers ---");
-        console.log("Current index:", currentIndex);
-        console.log("Items per page:", itemsPerPage);
-        
-        let cardsSection3 = "";
-        const sliced = farmerFlowers.slice(currentIndex, currentIndex + itemsPerPage);
-        console.log("Flowers to display:", sliced.length);
-
-        if (sliced.length === 0) {
-            console.warn("No flowers to display at current index");
-            container3.innerHTML = '<div style="text-align: center; padding: 2rem;">Tidak ada bunga untuk ditampilkan</div>';
-            return;
-        }
-
-        sliced.forEach((flower, idx) => {
-            const actualIndex = currentIndex + idx;
-            
-            // Buat deskripsi default jika tidak ada
-            const description = flower.description || `${flower.name} adalah salah satu bunga unggulan dari kebun ${farmer.name}. Bunga ini dirawat dengan penuh perhatian untuk menghasilkan kualitas terbaik.`;
-            
-            cardsSection3 += `
-                <div class="card">
-                    <img class="rectangle-2" src="${flower.image}" alt="${flower.name}" onerror="this.src='https://via.placeholder.com/300x200?text=${encodeURIComponent(flower.name)}'" />
-                    <div class="heading-2-a-summer-to-grow-explore">${flower.name}</div>
-                    <div class="bunga-krisan-atau-seruni-adalah-simbol-keanggunan-klasik">
-                        ${description}
-                    </div>
-                    <div class="button-lihat-detail">
-                        <div class="heading-2-a-summer-to-grow-explore2" onclick="showPopup(${actualIndex})">Lihat Detail</div>
-                    </div>
-                </div>
-            `;
-        });
-
-        container3.innerHTML = cardsSection3;
-        console.log("✅ Flowers rendered successfully");
-        
-        // Verifikasi render
-        setTimeout(() => {
-            const cardElements = container3.querySelectorAll('.card');
-            console.log("Cards in DOM:", cardElements.length);
-        }, 100);
+    // Sembunyikan tombol jika bunga tidak cukup untuk di-scroll
+    if (slides.length <= itemsPerPage) {
+        nextButton.style.display = 'none';
+        prevButton.style.display = 'none';
+        return; // Hentikan script jika tidak perlu navigasi
     }
 
-    // Global function untuk popup detail bunga
-    window.showPopup = function(index) {
-        console.log("showPopup called with index:", index);
-        
-        if (!farmerFlowers || !farmerFlowers[index]) {
-            console.error("Flower not found at index:", index);
-            alert("Detail bunga tidak ditemukan");
-            return;
+    const slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width + 20 : 0; // +20 untuk gap
+    let currentIndex = 0;
+    let autoRotateInterval; // Variabel untuk menyimpan interval
+
+    function moveToSlide(targetIndex) {
+        const maxIndex = slides.length - itemsPerPage;
+        if (targetIndex > maxIndex) {
+            targetIndex = 0; // Kembali ke awal
+        }
+        if (targetIndex < 0) {
+            targetIndex = maxIndex; // Lompat ke akhir
         }
         
-        const flower = farmerFlowers[index];
-        const description = flower.description || `${flower.name} adalah salah satu bunga unggulan dari kebun ${farmer.name}.`;
-        
-        const popupContent = `
-=== ${flower.name} ===
-
-${description}
-
-Petani: ${farmer.name}
-Lokasi: ${farmer.address}
-Spesialisasi: ${farmer.specialization}
-
-Untuk menanyakan harga dan ketersediaan bunga ini, silakan hubungi petani langsung melalui WhatsApp.
-        `;
-        
-        alert(popupContent);
-    };
-
-    // Render bunga pertama kali
-    console.log("🚀 Starting initial flower render...");
-    renderFlowersSlider();
-
-    // Auto-rotate setiap 4 detik (hanya jika ada lebih dari itemsPerPage bunga)
-    if (farmerFlowers.length > itemsPerPage) {
-        const rotateInterval = setInterval(() => {
-            console.log("🔄 Auto-rotating flowers...");
-            currentIndex += itemsPerPage;
-            if (currentIndex >= farmerFlowers.length) {
-                currentIndex = 0;
-                console.log("↩️ Reset to beginning");
-            }
-            renderFlowersSlider();
-        }, 4000);
-        
-        console.log("✅ Auto-rotate interval set (every 4 seconds)");
-    } else {
-        console.log("ℹ️ Auto-rotate disabled (not enough flowers)");
+        track.style.transform = 'translateX(-' + slideWidth * targetIndex + 'px)';
+        currentIndex = targetIndex;
     }
-    
-    console.log("=== INITIALIZATION COMPLETE ===");
+
+    function startAutoRotate() {
+        autoRotateInterval = setInterval(() => {
+            moveToSlide(currentIndex + 1);
+        }, 3000);
+    }
+
+    function stopAutoRotate() {
+        clearInterval(autoRotateInterval);
+    }
+
+    nextButton.addEventListener('click', () => {
+        stopAutoRotate(); // Hentikan putaran otomatis saat user berinteraksi
+        moveToSlide(currentIndex + 1);
+    });
+
+    prevButton.addEventListener('click', () => {
+        stopAutoRotate(); // Hentikan putaran otomatis saat user berinteraksi
+        moveToSlide(currentIndex - 1);
+    });
+
+    // Mulai putaran otomatis
+    startAutoRotate();
 });
-</script>
-
-
+    </script>
 </body>
 </html>

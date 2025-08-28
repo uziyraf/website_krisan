@@ -17,37 +17,37 @@
 </head>
 
 <body>
+    <div class="farmer-list-page">
     <header class="navbar">
         <nav>
-            <a href="{{ url('/') }}">Home</a>
-            <a href="{{ url('/about') }}">About</a>
-            <a href="{{ url('/flower-list') }}">Flower</a>
-            <a href="{{ url('/farmer-list') }}">Farmer</a>
-            <a href="#gallery">Gallery</a>
+            <a href="{{ url('/') }}">Beranda</a>
+            <a href="{{ url('/about') }}">Tentang</a>
+            <a href="{{ url('/flower-list') }}">Bunga</a>
+            <a href="{{ url('/farmer-list') }}">Anggota</a>
+            <a href="#gallery">Galeri</a>
         </nav>
     </header>
    
     <div class="section">
         <img class="bunga-krisan-1" src="img/icon.png" />
-        <div class="heading-2-a-summer-to-grow-explore">Petani Kami</div>
+        <div class="heading-2-a-summer-to-grow-explore">Kelompok Petani</div>
         <div class="desa-tutur-kabupaten-pasuruan2">
-        Desa Tutur Kabupaten Pasuruan
+        Dusun Kadipaten Desa Tutur Kabupaten Pasuruan
         </div>
         <div class="link7">
         <div class="explore-our-flower">Kenali kami</div>
         </div>
     </div>
 
-    <div class="farmer-card-grid" id="farmer-card-container"></div>
-  
-    
+    @include('_farmer-card-grid', ['farmers' => $farmers])
+      
   <footer class="footer">
         <div class="footer-top">
             <div class="footer-column">
             <ul>
                 <li><a href="#">Tentang Kami</a></li>
                 <li><a href="#">Bunga</a></li>
-                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Anggota</a></li>
                 <li><a href="#">Galeri</a></li>
                 <li><a href="#">Bergabung dengan Kami</a></li>
             </ul>
@@ -79,24 +79,6 @@
             <a href="#">Kebijakan Privasi</a>
         </div>
     </footer>
-         <script src="{{ asset('js/data-petani.js') }}"></script>
-    <script>
-        
-            let farmerCardsHtml = "";
-            farmers.forEach((farmer, idx) => {
-                farmerCardsHtml += `
-                    <div class="card-profil">
-                        <img class="profil-img" src="${farmer.image}" alt="${farmer.name}" />
-                        <div class="heading-2-a-summer-to-grow-explore">${farmer.name}</div>
-                        <div class="heading-2-a-summer-to-grow-explore">${farmer.specialization}</div>
-                        <div class="profil-desc">${farmer.description}</div>
-                        <div class="button-lihat-detail2" onclick="window.location.href='/farmer-detail?id=${farmer.id}'">
-                        <div class="heading-2-a-summer-to-grow-explore3">${farmer.detail}</div>
-                        </div>
-                    </div>
-                `;
-            });
-            document.getElementById('farmer-card-container').innerHTML = farmerCardsHtml;
-</script>
+ </div>
 </body>
 </html>
