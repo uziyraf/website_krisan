@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>Tambah Jenis Bunga Baru</title>
     {{-- Anda bisa menggunakan style yang sama dari form petani --}}
     <style>
@@ -49,7 +54,7 @@
             <label for="image">Gambar Bunga</label>
             <input type="file" id="image" name="image" required>
         </div>
-        <button type="submit">Simpan Bunga</button>
+        <button class="edit-btn" type="submit">Simpan Bunga</button>
     </form>
 
 </body>

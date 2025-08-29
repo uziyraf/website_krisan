@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>Tambah Petani Baru</title>
     <style>
         body { font-family: sans-serif; margin: 2rem; }
@@ -100,7 +105,7 @@
     </div>
 
     {{-- Teks tombol akan berubah tergantung mode --}}
-    <button type="submit">{{ isset($farmer) ? 'Update Petani' : 'Simpan Petani' }}</button>
+    <button  class="edit-btn" type="submit">{{ isset($farmer) ? 'Update Petani' : 'Simpan Petani' }}</button>
     </form>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

@@ -8,7 +8,7 @@
 body {
     font-family: 'Segoe UI', sans-serif;
     line-height: 1.6;
-    background: #fffdf8;
+    background: cornsilk;
     color: #333;
 }
 
@@ -51,6 +51,12 @@ body {
 .navbar nav a:hover,
 .navbar nav a.active {
     background-color: rgba(255, 255, 255, 0.15);
+}
+
+.navbar-logo img {
+    height: 40px; /* Atur tinggi logo */
+    width: auto;
+    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
 }
 
 
@@ -1634,19 +1640,196 @@ footer {
     font-weight: bold;
 }
 
+/*halamam admin*/
+.header-admin {
+    display: flex;
+    flex-direction: column;  /* Membuat item tersusun ke bawah */
+    align-items: center;   /* Mendorong semua item ke kanan */
+    margin-bottom: 1rem;
+}
+
+.header-buttons {
+    display: flex; /* Membuat tombol di dalamnya tetap berdampingan */
+    gap: 10px;     /* Memberi jarak antar tombol */
+}
+
+.admin-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(44,87,71,0.10);
+    width: 100%;
+    max-width: 500px;
+    margin: 80px auto;
+}
+
+.admin-container h1 {
+    text-align: center;
+    color: #2C5747;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    color: #115234;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 12px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #2C5747;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(44,87,71,0.08);
+    transition: background 0.2s;
+}
+
+.btn:hover {
+    background-color: #115234;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.admin-table {
+    width: 100%;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-collapse: collapse;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(44,87,71,0.08);
+    border-radius: 16px;
+    overflow: hidden;
+    font-family: 'Segoe UI', 'Playfair Display', sans-serif;
+    border: 1px solid #2C5747;
+}
+
+.admin-table th, .admin-table td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    font-size: 16px;
+    color: #2C5747;
+    border: 1px solid #2C5747;
+}
+
+.admin-table th {
+    background: #2C5747;
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid #ffffff;
+}
+
+.admin-table tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-table a {
+    color: #115234;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 4px 10px;
+    transition: background 0.2s;
+}
+
+.btn-tambah{
+    display: inline-block;
+    background: #2C5747;
+    color: #fff !important;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(44,87,71,0.08);
+}
+
+.edit-btn{display: inline-block;
+    background: #2C5747;
+    color: #fff !important;
+    padding: 5px 15px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: auto;
+    box-shadow: 0 2px 8px rgba(44,87,71,0.08);
+}
+
+.hapus-btn{
+    background: #b31111;
+    color: #fff !important;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: auto;
+    border: none;  
+}
+
+td.action-links .hapus-btn:hover { /* <-- Lebih spesifik */
+    color: #a71d2a;
+}
+/* Responsive */
+@media (max-width: 600px) {
+    .admin-table {
+        font-size: 13px;
+        max-width: 98vw;
+    }
+    .admin-table th, .admin-table td {
+        padding: 8px 6px;
+    }
+}
+
+/*end-halaman-admin*/
+
 /* Responsive untuk smartphone */
 @media (max-width: 600px) {
 
    .navbar {
         width: 100vw;
         max-width: 100vw;
-        padding: 8px 8px;
+        padding: 4px 10px;
         border-radius: 50;
         position: fixed;
         top: 0;
         left: 0;
         transform: none;
-        margin: 5px 5px 5px 5px;
+        margin: 10px 5px 5px 5px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         z-index: 1000;
     }
@@ -1660,17 +1843,32 @@ footer {
     }
     .navbar nav a {
         font-size: 15px;
-        padding: 6px 10px;
+        padding: 4px 4px;
         border-radius: 12px;
         color: white;
         background: transparent;
     }
+
+     .navbar-logo img {
+        height: 45px;      /* Lebih kecil dari desktop */
+        width: auto;
+        margin-right: 0; /* Jarak dengan menu */
+        display: block;
+    }
+    .navbar-logo {
+        padding: 0;
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 40px;
+    }
     
     .hero {
-         max-width: 98vw;
+        max-width: 98vw;
         aspect-ratio: 16/9;
         min-height: 180px;
-        margin: 60px auto 0 auto;
+        margin: 120px auto 0 auto;
         border-radius: 12px;
         padding: 0;
     }
@@ -1732,10 +1930,11 @@ footer {
     }
 
      .about {
+        background-color:cornsilk ;
         max-width: 98vw;
         aspect-ratio: 16/9;
         min-height: 180px;
-        margin: 60px auto 0 auto;
+        margin: 120px auto 0 auto;
         border-radius: 12px;
         padding: 0;
     }
@@ -1845,6 +2044,19 @@ footer {
         gap: 8px;
         font-size: 12px;
         padding-top: 0.5rem;
+    }
+
+    .admin-container {
+        padding: 12px;
+        max-width: 98vw;
+        margin: 40px auto;
+    }
+    .admin-table {
+        font-size: 13px;
+        max-width: 98vw;
+    }
+    .admin-table th, .admin-table td {
+        padding: 8px 6px;
     }
 }
 

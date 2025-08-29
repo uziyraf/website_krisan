@@ -17,6 +17,9 @@
 </head>
 <body>
      <header class="navbar">
+        <a href="{{ url('/') }}" class="navbar-logo">
+            <img src="{{ asset('img/logo-kampung-krisan1.png') }}" alt="Logo Kampung Krisan">
+        </a>
         <nav>
             <a href="{{ url('/') }}">Beranda</a>
             <a href="{{ url('/about') }}">Tentang</a>

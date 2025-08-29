@@ -3,29 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <title>Daftar Petani</title>
-    <style>
-        body { font-family: sans-serif; margin: 2rem; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        th { background-color: #f2f2f2; }
-        img { max-width: 50px; border-radius: 5px; }
-        .action-links a { margin-right: 10px; }
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
-        .header a { background-color: #28a745; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 5px; }
-    </style>
 </head>
 <body>
 
-    <div class="header">
+    <div class="header-admin">
         <h1>Daftar Semua Petani</h1>
-        <a href="{{ route('farmers.create') }}">Tambah Petani Baru</a>
+        <div class="header-buttons">
+        <a class="btn-tambah" href="{{ route('flowers.create') }}">Tambah Bunga Baru</a>
+        <a class="btn-tambah" href="{{ route('farmers.create') }}">Tambah Petani Baru</a>
+        </div>
     </div>
 
-    <table>
+    <table class="admin-table">
         <thead>
             <tr>
-                <th>Foto</th>
+                <th>No</th> <th>Foto</th>
                 <th>Nama</th>
                 <th>Alamat</th>
                 <th>Spesialisasi</th>
@@ -36,7 +34,7 @@
         <tbody>
             @forelse ($farmers as $farmer)
                 <tr>
-                    <td><img src="{{ asset('storage/' . $farmer->image) }}" alt="Foto {{ $farmer->name }}"></td>
+                    <td>{{ $loop->iteration }}</td> <td><img src="{{ asset('storage/' . $farmer->image) }}" alt="Foto {{ $farmer->name }}"></td>
                     <td>{{ $farmer->name }}</td>
                     <td>{{ $farmer->address }}</td>
                     <td>{{ $farmer->specialization }}</td>
@@ -48,17 +46,19 @@
                         </ul>
                     </td>
                     <td class="action-links">
-                        <a href="{{ route('farmers.edit', ['farmer' => $farmer->id]) }}">Edit</a>
+                        <a href="{{ route('farmers.edit', ['farmer' => $farmer->id]) }}" class="edit-btn">Edit</a>
                         <form action="{{ route('farmers.destroy', $farmer->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
-                            <button type-="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus petani ini?')">Hapus</button>
+                            <button class="hapus-btn" type-="submit" onclick="return confirm('Apakah Anda yakin ingin menghapus petani ini?')">Hapus</button>
                         </form>
                     </td>
                 </tr>
             @empty
                 <tr>
-                    <td colspan="7">Belum ada data petani.</td> </tr>
+            {{-- Update colspan menjadi 8 --}}
+                <td colspan="8">Belum ada data petani.</td> 
+                </tr>
             @endforelse
         </tbody>
     </table>
