@@ -27,6 +27,10 @@
         </nav>
     </header>
     <section id="about" class="about">
+        <video playsinline autoplay muted loop class="hero-video">
+        <source src="{{ asset('videos/video-profil.mp4') }}" type="video/mp4">
+        Browser Anda tidak mendukung tag video.
+        </video>
         <h1>
             Cerita di Balik Setiap Tangkai
         </h1>

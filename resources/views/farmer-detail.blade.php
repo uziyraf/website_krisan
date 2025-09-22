@@ -157,41 +157,39 @@
             document.getElementById('flower-popup').style.display = 'none';
         };
 
-        // Tambahkan ini di dalam tag <script> yang sudah ada
     document.addEventListener("DOMContentLoaded", function() {
-    // 1. PERBAIKAN: Selector sekarang langsung menargetkan .carousel-track
     const track = document.querySelector('.carousel-track');
     const nextButton = document.querySelector('.next-button');
     const prevButton = document.querySelector('.prev-button');
 
-    // Cek dulu apakah elemen-elemen carousel ada di halaman
     if (!track || !nextButton || !prevButton) {
-        return; // Hentikan jika tidak ada carousel di halaman ini
+        return;
     }
 
     const slides = Array.from(track.children);
-    const itemsPerPage = 3;
+
+    // Responsive: jumlah item per page
+    let itemsPerPage = window.innerWidth <= 600 ? 1 : 3;
 
     // Sembunyikan tombol jika bunga tidak cukup untuk di-scroll
     if (slides.length <= itemsPerPage) {
         nextButton.style.display = 'none';
         prevButton.style.display = 'none';
-        return; // Hentikan script jika tidak perlu navigasi
+        return;
     }
 
-    const slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width + 20 : 0; // +20 untuk gap
+    const slideWidth = slides.length > 0 ? slides[0].getBoundingClientRect().width + 20 : 0;
     let currentIndex = 0;
-    let autoRotateInterval; // Variabel untuk menyimpan interval
+    let autoRotateInterval;
 
     function moveToSlide(targetIndex) {
         const maxIndex = slides.length - itemsPerPage;
         if (targetIndex > maxIndex) {
-            targetIndex = 0; // Kembali ke awal
+            targetIndex = 0;
         }
         if (targetIndex < 0) {
-            targetIndex = maxIndex; // Lompat ke akhir
+            targetIndex = maxIndex;
         }
-        
         track.style.transform = 'translateX(-' + slideWidth * targetIndex + 'px)';
         currentIndex = targetIndex;
     }
@@ -207,17 +205,22 @@
     }
 
     nextButton.addEventListener('click', () => {
-        stopAutoRotate(); // Hentikan putaran otomatis saat user berinteraksi
+        stopAutoRotate();
         moveToSlide(currentIndex + 1);
     });
 
     prevButton.addEventListener('click', () => {
-        stopAutoRotate(); // Hentikan putaran otomatis saat user berinteraksi
+        stopAutoRotate();
         moveToSlide(currentIndex - 1);
     });
 
-    // Mulai putaran otomatis
     startAutoRotate();
+
+    // Tambahkan event listener untuk resize agar carousel tetap responsif
+    window.addEventListener('resize', function() {
+        itemsPerPage = window.innerWidth <= 600 ? 1 : 3;
+        moveToSlide(0); // Reset ke awal saat resize
+    });
 });
     </script>
 </body>

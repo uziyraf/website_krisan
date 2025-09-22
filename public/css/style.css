@@ -63,19 +63,26 @@ body {
 /* home */
 .hero {
     min-height: 100vh;
-    padding: 60px 20px 80px 200px;
-    background: url('../img/Container.png') no-repeat center center / cover;
     color: white;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    /* Geser ke bawah */
     align-items: flex-start;
-    /* Geser ke kiri */
-    gap: 0px;
     text-align: left;
-    /* Ubah dari center ke kiri */
+    padding: 60px 20px 80px 200px;
+    overflow: hidden; /* Tambahkan ini agar video tidak keluar dari section */
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Seperti 'background-size: cover' untuk video */
+    transform: translate(-50%, -50%);
+    z-index: -1; /* PENTING: Ini meletakkan video di belakang konten lain */
 }
 
 .hero::before {
@@ -1322,6 +1329,7 @@ footer {
   width: 24px;
   height: 24px;
 }
+
 .carousel-container {
   overflow: hidden;
   width: 100%;
@@ -1418,7 +1426,6 @@ footer {
     min-height: 100vh;
     padding: 60px 20px 80px;
     /* Hapus padding kiri 200px */
-    background: url('../img/Container.png') no-repeat center center / cover;
     color: white;
     position: relative;
     display: flex;
@@ -1758,6 +1765,13 @@ footer {
     transition: background 0.2s;
 }
 
+.admin-table img {
+    width: 50px;      
+    height: 50px;     
+    object-fit: cover;
+    border-radius: 8px; 
+}
+
 .btn-tambah{
     display: inline-block;
     background: #2C5747;
@@ -2093,5 +2107,61 @@ td.action-links .hapus-btn:hover { /* <-- Lebih spesifik */
     }
     .button-lihat-detail {
         margin-top: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-image {
+        width: 100vw;
+        padding: 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: static;
+        top: unset;
+        left: unset;
+        transform: none;
+    }
+    .ellipse-wrapper {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto;
+        position: relative;
+    }
+    .ellipse-1 {
+        width: 100%;
+        height: 100%;
+    }
+    .ellipse-2 {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+    .name-farmer {
+        font-size: 1.2rem;
+        margin-top: 12px;
+        text-align: center;
+        word-break: break-word;
+    }
+    .group-2 {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        margin-top: 8px;
+        display: flex;
+    }
+    .location-on {
+        width: 18px;
+        height: 18px;
+    }
+    .link-address {
+        font-size: 1rem;
+        word-break: break-word;
+        text-align: center;
+        margin: 0;
     }
 }

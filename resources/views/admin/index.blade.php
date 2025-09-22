@@ -34,7 +34,8 @@
         <tbody>
             @forelse ($farmers as $farmer)
                 <tr>
-                    <td>{{ $loop->iteration }}</td> <td><img src="{{ asset('storage/' . $farmer->image) }}" alt="Foto {{ $farmer->name }}"></td>
+                    <td>{{ $loop->iteration }}</td> 
+                    <td><img src="{{ asset('storage/' . $farmer->image) }}" alt="Foto {{ $farmer->name }}"></td>
                     <td>{{ $farmer->name }}</td>
                     <td>{{ $farmer->address }}</td>
                     <td>{{ $farmer->specialization }}</td>

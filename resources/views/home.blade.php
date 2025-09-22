@@ -36,17 +36,21 @@
 
     <!-- Hero -->
     <section id="home" class="hero">
-        <h1>
+        <video playsinline autoplay muted loop class="hero-video">
+        <source src="{{ asset('videos/video-profil.mp4') }}" type="video/mp4">
+        Browser Anda tidak mendukung tag video.
+        </video>
+        {{-- <h1>
             Kampung<br />
             Bunga Krisan
         </h1>
-        <p>Desa Tutur - Kabupaten Pasuruan</p>
-        <div class="play-wrapper">
+        <p>Desa Tutur - Kabupaten Pasuruan</p> --}}
+        {{-- <div class="play-wrapper">
             <span class="play-text">Play Video</span>
             <button class="play-button" onclick="scrollToProduk()">
                 <span class="play-icon">&#9658;</span>
             </button>
-        </div>
+        </div> --}}
     </section>
 
     <section class="hero-caption">
@@ -170,49 +174,45 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-    // Sesuaikan selector ini agar cocok dengan HTML di beranda
+       document.addEventListener("DOMContentLoaded", function () {
     const track = document.getElementById('farmer-carousel-track');
     const nextButton = document.querySelector('.farmer-carousel-container .next-btn');
     const prevButton = document.querySelector('.farmer-carousel-container .prev-btn');
 
-    // Cek dulu apakah elemen-elemen carousel ada di halaman
     if (!track || !nextButton || !prevButton || track.children.length === 0) {
-        return; // Hentikan jika tidak ada carousel di halaman ini
-    }
-
-    const slides = Array.from(track.children);
-    const itemsVisible = 3; // Ubah angka ini jika ingin menampilkan jumlah kartu yang berbeda
-
-    // Sembunyikan tombol jika item tidak cukup untuk di-scroll
-    if (slides.length <= itemsVisible) {
-        nextButton.style.display = 'none';
-        prevButton.style.display = 'none';
         return;
     }
 
-    const slideWidth = slides[0].getBoundingClientRect().width + 30; // Lebar Kartu (350px) + margin (15px*2)
+    const slides = Array.from(track.children);
+
+    function getItemsPerPage() {
+        return window.innerWidth <= 600 ? 1 : 3;
+    }
+
+    let itemsPerPage = getItemsPerPage();
+    let slideWidth = slides[0].getBoundingClientRect().width + 30;
     let currentIndex = 0;
     let autoRotateInterval;
 
+    function updateCarousel() {
+        itemsPerPage = getItemsPerPage();
+        slideWidth = slides[0].getBoundingClientRect().width + 30;
+        moveToSlide(0);
+    }
+
     function moveToSlide(index) {
-        const maxIndex = slides.length - itemsVisible;
-        if (index > maxIndex) {
-            index = 0; // Kembali ke awal
-        }
-        if (index < 0) {
-            index = maxIndex; // Lompat ke akhir
-        }
-        
+        const maxIndex = slides.length - itemsPerPage;
+        if (index > maxIndex) index = 0;
+        if (index < 0) index = maxIndex;
         track.style.transform = 'translateX(-' + (slideWidth * index) + 'px)';
         currentIndex = index;
     }
 
     function startAutoRotate() {
-        stopAutoRotate(); // Hentikan dulu jika sudah ada
+        stopAutoRotate();
         autoRotateInterval = setInterval(() => {
             moveToSlide(currentIndex + 1);
-        }, 3000); // Ganti slide setiap 3 detik
+        }, 3000);
     }
 
     function stopAutoRotate() {
@@ -220,17 +220,23 @@
     }
 
     nextButton.addEventListener('click', () => {
-        stopAutoRotate(); // Hentikan putaran otomatis saat user berinteraksi
+        stopAutoRotate();
         moveToSlide(currentIndex + 1);
     });
 
     prevButton.addEventListener('click', () => {
-        stopAutoRotate(); // Hentikan putaran otomatis saat user berinteraksi
+        stopAutoRotate();
         moveToSlide(currentIndex - 1);
     });
 
-    // Mulai putaran otomatis saat halaman dimuat
+    window.addEventListener('resize', updateCarousel);
+
+    // Jangan sembunyikan tombol nav, biarkan tetap muncul
+    nextButton.style.display = '';
+    prevButton.style.display = '';
+
     startAutoRotate();
+    updateCarousel();
 });
 </script>
 </body>
