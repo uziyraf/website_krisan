@@ -27,7 +27,6 @@
             <a href="{{ url('/about') }}">Tentang</a>
             <a href="{{ url('/flower-list') }}">Bunga</a>
             <a href="{{ url('/farmer-list') }}">Anggota</a>
-            <a href="#gallery">Galeri</a>
         </nav>
     </header>
    

@@ -28,7 +28,6 @@
             <a href="{{ url('/about') }}">Tentang</a>
             <a href="{{ url('/flower-list') }}">Bunga</a>
             <a href="{{ url('/farmer-list') }}">Anggota</a>
-            <a href="#gallery">Galeri</a>
         </nav>
     </header>
   <div class="main">
@@ -56,11 +55,13 @@
                 {{ Str::words($flower->description, 15, '...') }}
             </div>
             <div class="button-lihat-detail">
-                {{-- Kita ubah onclick untuk mengirim data langsung --}}
-                <div class="heading-2-a-summer-to-grow-explore2" 
-                     onclick="showPopup('{{ $flower->name }}', '{{ asset('storage/' . $flower->image) }}', '{{ e($flower->description) }}')">
-                    Lihat Detail
-                </div>
+            <div class="heading-2-a-summer-to-grow-explore2"
+                data-name="{{ $flower->name }}"
+                data-image="{{ asset('storage/' . $flower->image) }}"
+                data-description="{{ $flower->description }}"
+                onclick="showPopup(this)">
+                Lihat Detail
+            </div>
             </div>
         </div>
     @endforeach
@@ -122,13 +123,18 @@
 
     <script>
     // Pop up logic BARU
-    function showPopup(name, imageUrl, description) {
-        document.getElementById('popup-title').textContent = name;
-        document.getElementById('popup-img').src = imageUrl;
-        document.getElementById('popup-desc').innerHTML = description + "<br><br>" +
-            `"Temukan pesona abadi dari bunga Krisan, atau yang juga dikenal sebagai Seruni. Setiap tangkainya dimahkotai oleh ratusan kelopak yang tersusun sempurna, menciptakan tampilan yang mewah dan penuh tekstur. Tersedia dalam spektrum warna yang memesona—dari putih murni yang melambangkan kejujuran, kuning ceria sebagai tanda persahabatan, hingga ungu anggun yang memancarkan kemewahan.<br>Bunga Krisan tidak hanya indah dipandang, tetapi juga sarat akan makna positif seperti kebahagiaan dan kehidupan yang panjang. Jadikan bunga ini sebagai pusat perhatian di meja makan Anda, rangkaian bunga ucapan selamat, atau sebagai hadiah yang menunjukkan ketulusan hati Anda kepada orang yang spesial."`;
-        document.getElementById('popup-detail').style.display = 'flex';
-    }
+    function showPopup(element) {
+    // Ambil data dari atribut data-* elemen yang diklik
+    const name = element.dataset.name;
+    const imageUrl = element.dataset.image;
+    const description = element.dataset.description;
+
+    // Sisa kodenya sama persis seperti sebelumnya
+    document.getElementById('popup-title').textContent = name;
+    document.getElementById('popup-img').src = imageUrl;
+    document.getElementById('popup-desc').innerHTML = description + "<br><br>"; 
+    document.getElementById('popup-detail').style.display = 'flex';
+}
 
     document.getElementById('close-popup').onclick = function() {
         document.getElementById('popup-detail').style.display = 'none';

@@ -23,24 +23,13 @@
             <a href="{{ url('/about') }}">Tentang</a>
             <a href="{{ url('/flower-list') }}">Bunga</a>
             <a href="{{ url('/farmer-list') }}">Anggota</a>
-            <a href="#gallery">Galeri</a>
         </nav>
     </header>
-    <section id="about" class="about">
-        <video playsinline autoplay muted loop class="hero-video">
-        <source src="{{ asset('videos/video-profil.mp4') }}" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-        </video>
-        <h1>
-            Cerita di Balik Setiap Tangkai
-        </h1>
-        <p>Desa Tutur - Mengenal lebih dekat kehidupan, warisan, dan harapan dari Kampung Bunga </br>Krisan Kabupaten Pasuruan</p>
-        <div class="play-wrapper">
-            <span class="play-text">Play Video</span>
-            <button class="play-button" onclick="scrollToProduk()">
-                <span class="play-icon">&#9658;</span>
-            </button>
-        </div>
+    <section id="about" class="hero">
+            <video playsinline autoplay muted loop class="hero-video" id="aboutVideo">
+            <source src="{{ asset('videos/BG VIDEO WEB.mp4') }}" type="video/mp4">
+            Browser Anda tidak mendukung tag video.
+            </video>
     </section>
 
     <section class="about-extra">

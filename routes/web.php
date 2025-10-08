@@ -43,4 +43,12 @@ Route::middleware(['auth.basic.sederhana'])->prefix('admin')->group(function () 
     Route::get('/flowers/create', [FlowerController::class, 'create'])->name('flowers.create');
     Route::post('/flowers', [FlowerController::class, 'store'])->name('flowers.store');
 
+
+    // --- Rute untuk Manajemen Bunga (Flowers) ---
+    Route::get('/flowers', [FlowerController::class, 'index'])->name('flowers.index');
+    Route::get('/flowers/create', [FlowerController::class, 'create'])->name('flowers.create');
+    Route::post('/flowers', [FlowerController::class, 'store'])->name('flowers.store');
+    Route::delete('/flowers/{flower}', [FlowerController::class, 'destroy'])->name('flowers.destroy');
+    Route::get('/flowers/{flower}/edit', [FlowerController::class, 'edit'])->name('flowers.edit');
+    Route::put('/flowers/{flower}', [FlowerController::class, 'update'])->name('flowers.update');
 });

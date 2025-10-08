@@ -42,6 +42,7 @@ body {
 .navbar nav a {
     color: white;
     text-decoration: none;
+    font-family: 'Playfair Display', serif;
     font-weight: 500;
     padding: 6px 12px;
     border-radius: 20px;
@@ -71,12 +72,57 @@ body {
     align-items: flex-start;
     text-align: left;
     padding: 60px 20px 80px 200px;
-    overflow: hidden; /* Tambahkan ini agar video tidak keluar dari section */
+    overflow: hidden;
+}
+
+.hero-content-left {
+ flex-basis: 100%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Konten di tengah secara vertikal */
+    z-index: 2; /* Pastikan teks di atas video */
+}
+
+
+
+/* Kolom Kanan untuk Video */
+
+.hero-video-right {
+    flex-basis: 50%; /* Lebar kolom kanan 50% */
+    position: relative;
+}
+
+.hero-video-right video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* Styling untuk teks di dalam kolom kiri */
+
+.hero-content-left .sub-heading {
+    font-size: 5rem;
+    color: cornsilk;
+}
+
+.hero-content-left h1 {
+    font-size: 10rem;
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+}
+
+.hero-content-left .tagline {
+    font-size: 2rem;
+    color: cornsilk;
+    margin-top: 10px;
 }
 
 .hero-video {
     position: absolute;
-    top: 50%;
+    top: 50%;                   
     left: 50%;
     width: 100%;
     height: 100%;
@@ -86,14 +132,18 @@ body {
 }
 
 .hero::before {
-    content: '';
+    content: ''; /* WAJIB ada agar pseudo-element bisa tampil */
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+        to right, /* Arah gradasi dari kiri ke kanan */
+       rgba(44, 87, 71, 0.8), /* Hijau gelap pekat di kiri */
+       rgba(44, 87, 71, 0.2)  /* Hijau gelap transparan di kanan */
+    ); 
+    z-index: 1;
 }
 
 .hero h1,
@@ -922,7 +972,7 @@ body {
   background-color: #2e5747;
   color: #fff;
   padding: 3rem 2rem 1rem;
-  font-family: sans-serif;
+  font-family: 'Playfair Display', serif;
   width: 100%;
   box-sizing: border-box;
 }
@@ -1423,37 +1473,28 @@ footer {
 
 /* halaman about */
 .about {
-    min-height: 100vh;
-    padding: 60px 20px 80px;
-    /* Hapus padding kiri 200px */
-    color: white;
     position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    /* Tengah vertikal */
-    align-items: center;
-    /* Tengah horizontal */
-    text-align: center;
-    gap: 0px;
+    overflow: hidden;
+    min-height: 100vh;
+    padding: 0;
+    background: none;
 }
+
 
 .about::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background-color: rgba(0, 0, 0, 0.4);
-    z-index: 0;
+    z-index: 1;
 }
 
 .about h1,
 .about p,
-.about button {
-    z-index: 1;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+.about button,
+.play-wrapper {
+    position: relative;
+    z-index: 2;
 }
 
 .about h1 {
@@ -1837,13 +1878,14 @@ td.action-links .hapus-btn:hover { /* <-- Lebih spesifik */
    .navbar {
         width: 100vw;
         max-width: 100vw;
-        padding: 4px 10px;
-        border-radius: 50;
+        left: 0;
+        right: 0;
         position: fixed;
         top: 0;
-        left: 0;
         transform: none;
-        margin: 10px 5px 5px 5px;
+        margin: 0 !important;
+        padding: 8px 0 !important;
+        border-radius: 0 !important;
         box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         z-index: 1000;
     }
@@ -1858,7 +1900,6 @@ td.action-links .hapus-btn:hover { /* <-- Lebih spesifik */
     .navbar nav a {
         font-size: 15px;
         padding: 4px 4px;
-        border-radius: 12px;
         color: white;
         background: transparent;
     }
@@ -1879,13 +1920,40 @@ td.action-links .hapus-btn:hover { /* <-- Lebih spesifik */
     }
     
     .hero {
-        max-width: 98vw;
-        aspect-ratio: 16/9;
-        min-height: 180px;
-        margin: 120px auto 0 auto;
-        border-radius: 12px;
-        padding: 0;
+        width: 100%;
+        height: 100vh; /* 100% tinggi layar */
+        min-height: 100vh; /* Pastikan tinggi minimal juga full */
+        max-width: none; /* Hapus batasan lebar maksimal */
+        margin: 0; /* Hapus semua margin */
+        border-radius: 0; /* Hapus sudut melengkung */
+        aspect-ratio: auto; /* Hapus rasio aspek 16:9 */
     }
+    
+    .hero-content-left {
+        position: absolute;       /* Pastikan posisinya absolut agar bisa "melayang" */
+        z-index: 2;               /* Pastikan teks berada di atas video dan overlay */
+        bottom: 15%;              /* Posisi dari bawah layar (bisa disesuaikan) */
+        left: 0;                  /* KUNCI: Paksa elemen ke sisi paling kiri layar */
+        width: 100%;              /* Gunakan lebar penuh layar */
+        padding: 0 1.5rem;        /* Beri jarak di DALAM (kiri & kanan) agar teks tidak mepet */
+        box-sizing: border-box;   /* Praktik terbaik agar padding tidak menambah lebar */
+        text-align: left;         /* Pastikan teks di dalamnya rata kiri */
+    }
+    
+    /* --- Pengaturan Ukuran Teks (sesuai gambar) --- */
+    .hero-content-left .sub-heading {
+        font-size: 2.8rem;
+    }
+
+    .hero-content-left h1 {
+        font-size: 2.8rem;
+        line-height: 1.2;
+    }
+
+    .hero-content-left .tagline {
+        font-size: 2rem;
+    }
+
     .hero h1 {
         font-size: 28px;
     }
@@ -1948,7 +2016,7 @@ td.action-links .hapus-btn:hover { /* <-- Lebih spesifik */
         max-width: 98vw;
         aspect-ratio: 16/9;
         min-height: 180px;
-        margin: 120px auto 0 auto;
+        margin: 70px auto 0 auto;
         border-radius: 12px;
         padding: 0;
     }
@@ -1998,32 +2066,48 @@ td.action-links .hapus-btn:hover { /* <-- Lebih spesifik */
         font-size: 15px;
         left: 0;
     }
-    .farmer-carousel-container {
-        padding: 0 8px;
-        max-width: 98vw;
+     .farmer-carousel-container {
+        max-width: 100vw;
+        padding: 0 4vw; /* Lebih kecil, biar tidak kepotong */
+        margin: 24px auto;
     }
     .farmer-card {
-        width: 98vw;
-        min-width: 98vw;
-        margin: 10px 0;
-        border-radius: 24px;
-        padding: 18px 8px;
+        min-width: 80vw;
+        max-width: 90vw;
+        margin: 0 auto;
+        padding: 16px 8px;
+        border-radius: 16px;
+        box-shadow: 0 2px 8px rgba(44,87,71,0.10);
     }
     .profil-img {
         width: 120px;
         height: 120px;
     }
+    
     .nav-buttons {
+        position: static !important;   /* Tidak absolute/fixed */
         width: 100%;
-        top: auto;
-        bottom: 0;
+        margin: 16px 0 0 0;
+        display: flex;
         justify-content: center;
         gap: 12px;
+        bottom: unset;
+        top: unset;
+        z-index: 2;
     }
+    
     .nav-btn {
         width: 40px;
         height: 40px;
         font-size: 20px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid #ddd;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.10);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .galery {
         padding: 18px 8px;
@@ -2114,7 +2198,7 @@ td.action-links .hapus-btn:hover { /* <-- Lebih spesifik */
     .profile-image {
         width: 100vw;
         padding: 0;
-        margin: 0 auto;
+        margin: 70 auto;
         display: flex;
         flex-direction: column;
         align-items: center;

@@ -29,28 +29,21 @@
             <a href="{{ url('/about') }}">Tentang</a>
             <a href="{{ url('/flower-list') }}">Bunga</a>
             <a href="{{ url('/farmer-list') }}">Anggota</a>
-            <a href="#gallery">Galeri</a>
         </nav>
     </header>
 
 
     <!-- Hero -->
     <section id="home" class="hero">
+        <div class="hero-content-left">
+        <p class="sub-heading">Kampung</p>
+        <p class="sub-heading"> Bunga Krisan</p>
+        <p class="tagline">Desa Tutur - Kabupaten Pasuruan</p>
+    </div>
         <video playsinline autoplay muted loop class="hero-video">
-        <source src="{{ asset('videos/video-profil.mp4') }}" type="video/mp4">
+        <source src="{{ asset('videos/BG VIDEO WEB.mp4') }}" type="video/mp4">
         Browser Anda tidak mendukung tag video.
         </video>
-        {{-- <h1>
-            Kampung<br />
-            Bunga Krisan
-        </h1>
-        <p>Desa Tutur - Kabupaten Pasuruan</p> --}}
-        {{-- <div class="play-wrapper">
-            <span class="play-text">Play Video</span>
-            <button class="play-button" onclick="scrollToProduk()">
-                <span class="play-icon">&#9658;</span>
-            </button>
-        </div> --}}
     </section>
 
     <section class="hero-caption">
@@ -116,23 +109,6 @@
              </div>
         </div>
     </section>
-
-    <section>
-        <div class="galery">
-            <h1>Our<br>Galery</h1>
-
-            <div class="gallery-single">
-                <img src="img/Group.png" alt="Foto Galery Kiri" />
-            </div>
-
-            <div class="vertical-line"></div>
-
-            <div class="gallery-single right-image">
-                <img src="img/Section.png" alt="Foto Galery Kanan" />
-            </div>
-        </div>
-    </section>
-
       
   <footer class="footer">
         <div class="footer-top">

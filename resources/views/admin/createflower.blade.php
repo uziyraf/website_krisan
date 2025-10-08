@@ -40,21 +40,30 @@
         </div>
     @endif
 
-    <form action="{{ route('flowers.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div class="form-group">
-            <label for="name">Nama Bunga</label>
-            <input type="text" id="name" name="name" value="{{ old('name') }}" required>
-        </div>
-        <div class="form-group">
-            <label for="description">Deskripsi</label>
-            <textarea id="description" name="description" required>{{ old('description') }}</textarea>
-        </div>
-        <div class="form-group">
-            <label for="image">Gambar Bunga</label>
-            <input type="file" id="image" name="image" required>
-        </div>
-        <button class="edit-btn" type="submit">Simpan Bunga</button>
+   <form action="{{ isset($flower) ? route('flowers.update', $flower->id) : route('flowers.store') }}" method="POST" enctype="multipart/form-data">
+    @csrf
+    @if(isset($flower))
+        @method('PUT')
+    @endif
+
+    <div class="form-group">
+        <label for="name">Nama Bunga</label>
+        <input type="text" name="name" id="name" value="{{ old('name', $flower->name ?? '') }}" required>
+    </div>
+    <div class="form-group">
+        <label for="description">Deskripsi</label>
+        <textarea name="description" id="description" required>{{ old('description', $flower->description ?? '') }}</textarea>
+    </div>
+    <div class="form-group">
+        <label for="image">Gambar</label>
+        <input type="file" name="image" id="image" {{ isset($flower) ? '' : 'required' }}>
+        @if(isset($flower) && $flower->image)
+            <img src="{{ asset('storage/' . $flower->image) }}" alt="Gambar bunga" style="max-width:120px; margin-top:10px;">
+        @endif
+    </div>
+    <button type="submit" class="btn">
+        {{ isset($flower) ? 'Update' : 'Tambah' }}
+    </button>
     </form>
 
 </body>

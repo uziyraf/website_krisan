@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -17,6 +17,10 @@
         <div class="header-buttons">
         <a class="btn-tambah" href="{{ route('flowers.create') }}">Tambah Bunga Baru</a>
         <a class="btn-tambah" href="{{ route('farmers.create') }}">Tambah Petani Baru</a>
+        </div>
+        <div>
+        <a class="btn-tambah" href="{{ route('flowers.index') }}">Data Bunga</a> {{-- <-- Tambah Link Ini --}}
+        <a class="btn-tambah" href="{{ route('farmers.index') }}">Data Petani </a>
         </div>
     </div>
 

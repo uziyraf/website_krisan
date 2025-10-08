@@ -10,6 +10,18 @@ Selamat datang di repositori proyek Website Kampung Bunga Krisan. Proyek ini ada
 - **Galeri Bunga**: Katalog bunga krisan yang tersedia, lengkap dengan deskripsi dan foto, yang diambil langsung dari database.
 - **Halaman Detail Interaktif**: Setiap petani memiliki halaman detail sendiri yang menampilkan cerita mereka dan carousel bunga yang mereka tanam.
 - **Panel Admin Sederhana**: Halaman admin yang diproteksi dengan autentikasi untuk melakukan operasi CRUD (Create, Read, Update, Delete) pada data petani dan bunga.
+-**Halaman 
+
+
+### 🚀 Fitur Mendatang (Under Development)
+
+#### Sistem Booking Kunjungan Langsung ke Petani
+Saat ini kami sedang aktif mengembangkan fitur sistem booking yang akan menjembatani pengguna dengan para petani secara langsung. Pengguna nantinya dapat membuat janji temu atau memesan jadwal kunjungan untuk berbagai keperluan, seperti:
+- **Wisata Agrikultur**: Mengunjungi kebun dan menikmati keindahan bunga krisan.
+- **Edukasi**: Belajar langsung dari para ahli mengenai budidaya krisan.
+- **Bisnis**: Menjalin kemitraan atau melakukan transaksi bisnis dengan petani.
+
+Fitur ini bertujuan untuk menciptakan pengalaman yang lebih personal dan mendukung interaksi langsung antara komunitas dan petani lokal.
 
 ---
 ## 📄 Dibuat Oleh Tim PPK Ormawa
