@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link rel="icon" type="image/png" href="{{ asset('img/logo-kampung-krisan1.png') }}">
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
@@ -25,7 +25,6 @@
             <a href="{{ url('/about') }}">Tentang</a>
             <a href="{{ url('/flower-list') }}">Bunga</a>
             <a href="{{ url('/farmer-list') }}">Anggota</a>
-            <a href="#gallery">Galeri</a>
         </nav>
     </header>
 
@@ -67,10 +66,13 @@
                                     {{ Str::words($flower->description, 15, '...') }}
                                 </div>
                                 <div class="button-lihat-detail">
-                                    <div class="heading-2-a-summer-to-grow-explore2" 
-                                        onclick="showFlowerPopup('{{ $flower->name }}', '{{ asset('storage/' . $flower->image) }}', '{{ e($flower->description) }}')">
-                                        Lihat Detail
-                                    </div>
+                                    <div class="heading-2-a-summer-to-grow-explore2"
+                                    data-name="{{ $flower->name }}"
+                                    data-image="{{ asset('storage/' . $flower->image) }}"
+                                    data-description="{{ $flower->description }}"
+                                    onclick="showPopup(this)">
+                                    Lihat Detail
+                                </div>
                                 </div>
                             </div>
                         @empty
@@ -81,7 +83,7 @@
             </div>
         </section>
 
-    <div class="pop-up" id="flower-popup" style="display:none;">
+    <div class="pop-up" id="popup-detail" style="display:none;">
         <div class="rectangle-4">
             <div class="heading-2-a-summer-to-grow-explore" id="popup-title"></div>
             <img class="x-circle" src="{{ asset('img/ic_close.png') }}" id="close-popup" />
@@ -110,11 +112,9 @@
         <div class="footer-top">
             <div class="footer-column">
             <ul>
-                <li><a href="#">Tentang Kami</a></li>
-                <li><a href="#">Bunga</a></li>
-                <li><a href="#">Anggota</a></li>
-                <li><a href="#">Galeri</a></li>
-                <li><a href="#">Bergabung dengan Kami</a></li>
+                <li><a href="{{ url('/about') }}">Tentang Kami</a></li>
+                <li><a href="{{ url('/flower-list') }}">Bunga</a></li>
+                <li><a href="{{ url('/farmer-list') }}">Petani</a></li>
             </ul>
 
             <div class="social-icons">
@@ -134,7 +134,8 @@
 
             <div class="footer-column right">
             <h4>Kirim Pesan kepada Kami →</h4>
-            <p>(845) 356–1234</p>
+            <p>081235891160</p>
+            <p>083854999558</p>
             <p>Desa Tutur<br>Kabupaten Pasuruan</p>
             </div>
         </div>
@@ -146,15 +147,21 @@
     </footer>
 
     <script>
-        function showFlowerPopup(name, imageUrl, fullDescription) {
-            document.getElementById('popup-title').textContent = name;
-            document.getElementById('popup-img').src = imageUrl;
-            document.getElementById('popup-desc').textContent = fullDescription;
-            document.getElementById('flower-popup').style.display = 'flex';
-        }
+        
+    function showPopup(element) {
+    
+    const name = element.dataset.name;
+    const imageUrl = element.dataset.image;
+    const description = element.dataset.description;
+
+    document.getElementById('popup-title').textContent = name;
+    document.getElementById('popup-img').src = imageUrl;
+    document.getElementById('popup-desc').innerHTML = description + "<br><br>"; 
+    document.getElementById('popup-detail').style.display = 'flex';
+    }
 
         document.getElementById('close-popup').onclick = function() {
-            document.getElementById('flower-popup').style.display = 'none';
+            document.getElementById('popup-detail').style.display = 'none';
         };
 
     document.addEventListener("DOMContentLoaded", function() {

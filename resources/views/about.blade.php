@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tentang Kami</title>
     <link href="https://fonts.googleapis.com/css2?family=Swanky+and+Moo+Moo&display=swap" rel="stylesheet">
-
+    <link rel="icon" type="image/png" href="{{ asset('img/logo-kampung-krisan1.png') }}">
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
@@ -26,8 +26,8 @@
         </nav>
     </header>
     <section id="about" class="hero">
-            <video playsinline autoplay muted loop class="hero-video" id="aboutVideo">
-            <source src="{{ asset('videos/BG VIDEO WEB.mp4') }}" type="video/mp4">
+            <video playsinline autoplay loop class="hero-video" id="aboutVideo">
+            <source src="{{ asset('videos/WEBSITE (1).mp4') }}" type="video/mp4">
             Browser Anda tidak mendukung tag video.
             </video>
     </section>
@@ -48,7 +48,6 @@
         </div>
     </section>
 
-    <!-- Tambahan teks di bawah, masih di halaman yang sama -->
     <div class="about-extra-bottom-text">
         <h3>Asal Mula Kampung Bunga Krisan</h3>
         <p> Karena setiap tangkai adalah wujud dari kualitas dan kepedulian. Dibudidayakan di dataran tinggi Tutur yang sejuk dan dirawat dengan teknologi presisi di dalam greenhouse modern, setiap bunga kami tumbuh dalam kondisi optimal. Hasilnya adalah mahakarya alam yang sempurna: krisan dengan warna yang jauh lebih hidup, batang yang kokoh, serta kesegaran yang terbukti tahan lebih lama.
@@ -84,11 +83,9 @@
         <div class="footer-top">
             <div class="footer-column">
             <ul>
-                <li><a href="#">Tentang Kami</a></li>
-                <li><a href="#">Bunga</a></li>
-                <li><a href="#">Marketplace</a></li>
-                <li><a href="#">Galeri</a></li>
-                <li><a href="#">Bergabung dengan Kami</a></li>
+                <li><a href="{{ url('/about') }}">Tentang Kami</a></li>
+                <li><a href="{{ url('/flower-list') }}">Bunga</a></li>
+                <li><a href="{{ url('/farmer-list') }}">Petani</a></li>
             </ul>
 
             <div class="social-icons">
@@ -108,7 +105,8 @@
 
             <div class="footer-column right">
             <h4>Kirim Pesan kepada Kami →</h4>
-            <p>(845) 356–1234</p>
+            <p>081235891160</p>
+            <p>083854999558</p>
             <p>Desa Tutur<br>Kabupaten Pasuruan</p>
             </div>
         </div>

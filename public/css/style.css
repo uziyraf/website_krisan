@@ -2195,6 +2195,16 @@ td.action-links .hapus-btn:hover { /* <-- Lebih spesifik */
 }
 
 @media (max-width: 600px) {
+     #home.hero,
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 12px;
+        min-height: 60vh;
+        box-sizing: border-box;
+    }
+    
     .profile-image {
         width: 100vw;
         padding: 0;

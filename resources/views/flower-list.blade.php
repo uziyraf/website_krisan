@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link rel="icon" type="image/png" href="{{ asset('img/logo-kampung-krisan1.png') }}">
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 </head>
@@ -71,11 +71,9 @@
   <div class="footer-top">
     <div class="footer-column">
       <ul>
-        <li><a href="#">Tentang Kami</a></li>
-        <li><a href="#">Bunga</a></li>
-        <li><a href="#">Marketplace</a></li>
-        <li><a href="#">Galeri</a></li>
-        <li><a href="#">Bergabung dengan Kami</a></li>
+        <li><a href="{{ url('/about') }}">Tentang Kami</a></li>
+        <li><a href="{{ url('/flower-list') }}">Bunga</a></li>
+        <li><a href="{{ url('/farmer-list') }}">Petani</a></li>
       </ul>
 
       <div class="social-icons">
@@ -95,7 +93,8 @@
 
     <div class="footer-column right">
       <h4>Kirim Pesan kepada Kami →</h4>
-      <p>(845) 356–1234</p>
+      <p>081235891160</p>
+      <p>083854999558</p>
       <p>Desa Tutur<br>Kabupaten Pasuruan</p>
     </div>
   </div>
@@ -122,14 +121,13 @@
     </div>
 
     <script>
-    // Pop up logic BARU
+    
     function showPopup(element) {
-    // Ambil data dari atribut data-* elemen yang diklik
+    
     const name = element.dataset.name;
     const imageUrl = element.dataset.image;
     const description = element.dataset.description;
 
-    // Sisa kodenya sama persis seperti sebelumnya
     document.getElementById('popup-title').textContent = name;
     document.getElementById('popup-img').src = imageUrl;
     document.getElementById('popup-desc').innerHTML = description + "<br><br>"; 

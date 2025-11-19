@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <link rel="icon" type="image/png" href="{{ asset('img/logo-kampung-krisan1.png') }}">
 
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
@@ -50,7 +50,9 @@
         <img src="img/icon.png" alt="Bunga Krisan" class="flower-icon">
         <h2>Kampung Bunga Krisan</h2>
         <p>Desa Tutur Kabupaten Pasuruan</p>
-        <button class="explore-btn" onclick="scrollToFlower()">Jelajahi Koleksi Bunga Kami</button>
+        <button class="explore-btn" onclick="scrollToFlower()">
+            <a href="{{ url('/flower-list') }}" style="text-decoration: none; color: white;" >Jelajahi Koleksi Bunga Kami</a>
+        </button>
     </section>
 
     <section class="hero-denah">
@@ -60,7 +62,10 @@
             <p>
                 Selamat datang di surga bunga tersembunyi di Dusun Kadipaten, Desa Tutur, Pasuruan. Berada di ketinggian dengan udara pegunungan yang sejuk, perkebunan kami adalah rumah bagi hamparan ribuan bunga krisan yang mekar dalam palet warna yang memukau. Kami bukan hanya sebuah perkebunan, melainkan destinasi agrowisata di mana Anda bisa merasakan pengalaman otentik memetik bunga segar langsung dari tangkainya. Setiap sudut kebun kami menawarkan pemandangan indah yang sempurna untuk mengabadikan momen berharga. Datang dan temukan harmoni alam, nikmati ketenangan, dan bawa pulang keindahan krisan dari Tutur.
             </p>
-            <button class="learn-btn" onclick="scrollToFlower()">Tentang Kebun Krisan Kami</button>
+            <button class="learn-btn" onclick="scrollToFlower()">
+                 <a href="{{ url('/about') }}" style="text-decoration: none; color: white;">Tentang Kebun Krisan Kami</a>
+        </button>
+            </button>
         </div>
     </section>
 
@@ -73,10 +78,9 @@
             <p>
                 Karena setiap tangkai adalah wujud dari kualitas dan kepedulian. Dibudidayakan di dataran tinggi Tutur yang sejuk dan dirawat dengan teknologi presisi di dalam greenhouse modern, setiap bunga kami tumbuh dalam kondisi optimal. Hasilnya adalah mahakarya alam yang sempurna: krisan dengan warna yang jauh lebih hidup, batang yang kokoh, serta kesegaran yang terbukti tahan lebih lama. Kami memetiknya khusus untuk Anda, memastikan kualitas premium dari kebun langsung ke tangan Anda. Dengan memilih kami, Anda tidak hanya mendapatkan bunga terindah untuk setiap momen, tetapi juga turut memberdayakan
             </p>
-            <button class="learn-btn2" onclick="scrollToFlower()">Jelajahi Koleksi Bunga Kami</button>
-            <p class="watch-video">
-                WATCH VIDEO <i class="fas fa-arrow-right"></i>
-            </p>
+            <button class="learn-btn2" onclick="scrollToFlower()">
+                <a href="{{ url('/flower-list') }}" style="text-decoration: none; color: white;" >Jelajahi Koleksi Bunga Kami</a>
+            </button>
         </div>
 
     </section>
@@ -114,11 +118,9 @@
         <div class="footer-top">
             <div class="footer-column">
             <ul>
-                <li><a href="#">Tentang Kami</a></li>
-                <li><a href="#">Bunga</a></li>
-                <li><a href="#">Marketplace</a></li>
-                <li><a href="#">Galeri</a></li>
-                <li><a href="#">Bergabung dengan Kami</a></li>
+                <li><a href="{{ url('/about') }}">Tentang Kami</a></li>
+                <li><a href="{{ url('/flower-list') }}">Bunga</a></li>
+                <li><a href="{{ url('/farmer-list') }}">Petani</a></li>
             </ul>
 
             <div class="social-icons">
@@ -138,7 +140,8 @@
 
             <div class="footer-column right">
             <h4>Kirim Pesan kepada Kami →</h4>
-            <p>(845) 356–1234</p>
+            <p>081235891160</p>
+            <p>083854999558</p>
             <p>Desa Tutur<br>Kabupaten Pasuruan</p>
             </div>
         </div>
