@@ -11,6 +11,12 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
+    // Tambahkan ke grup 'web'
+    $middleware->web(append: [
+        \App\Http\Middleware\TrackVisitors::class,
+    ]);
+    })
+    ->withMiddleware(function (Middleware $middleware) {
          $middleware->alias([
         'auth.basic.sederhana' => \App\Http\Middleware\OtentikasiAdminSederhana::class,
     ]);
@@ -18,3 +24,4 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withExceptions(function (Exceptions $exceptions) {
         //
     })->create();
+    

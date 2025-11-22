@@ -5,6 +5,7 @@ use App\Http\Controllers\FarmerController;
 use App\Http\Controllers\FlowerController; 
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\VisitorController;
 
 Route::get('/', [PageController::class, 'home'])->name('home');
 
@@ -51,4 +52,6 @@ Route::middleware(['auth.basic.sederhana'])->prefix('admin')->group(function () 
     Route::delete('/flowers/{flower}', [FlowerController::class, 'destroy'])->name('flowers.destroy');
     Route::get('/flowers/{flower}/edit', [FlowerController::class, 'edit'])->name('flowers.edit');
     Route::put('/flowers/{flower}', [FlowerController::class, 'update'])->name('flowers.update');
+
+    Route::get('/visitors', [VisitorController::class, 'index'])->name('visitors.index');
 });

@@ -144,6 +144,14 @@
             <p>083854999558</p>
             <p>Desa Tutur<br>Kabupaten Pasuruan</p>
             </div>
+            <div class="footer-bottom" style="flex-direction: column; gap: 5px;">
+    <p>&copy; 2025 KampungBungaKrisan. Seluruh Hak Cipta Dilindungi.</p>
+    <a href="#">Kebijakan Privasi</a>
+    
+    <p style="font-size: 12px; color: #ccc; margin-top: 10px;">
+        <i class="fas fa-users"></i> Total Pengunjung: <strong>{{ number_format($totalVisitors ?? 0) }}</strong>
+    </p>
+</div>
         </div>
 
         <div class="footer-bottom">

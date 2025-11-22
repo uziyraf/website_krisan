@@ -1777,6 +1777,129 @@ footer {
     border: 1px solid #2C5747;
 }
 
+
+
+/* Layout Utama: Flexbox */
+.admin-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    width: 250px; /* Lebar tetap sidebar */
+    background-color: #2C5747; /* Warna Hijau Tema Anda */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Agar sidebar tetap diam saat scroll */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.sidebar-header {
+    padding: 20px;
+    background-color: #1e3d32; /* Warna header sidebar lebih gelap */
+    text-align: center;
+}
+
+.sidebar-menu {
+    padding: 20px 0;
+    flex-grow: 1;
+}
+
+.menu-label {
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #8ba79b;
+    margin-top: 10px;
+}
+
+.menu-item {
+    display: block;
+    padding: 12px 20px;
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: background 0.3s;
+    font-size: 1rem;
+    border-left: 4px solid transparent;
+}
+
+.menu-item:hover, .menu-item.active {
+    background-color: #3a6b5a;
+    border-left-color: #fff; 
+    color: white;
+}
+
+.menu-item i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
+}
+
+/* Tombol Logout khusus agar menyatu dengan menu */
+button.logout-btn {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* --- KONTEN UTAMA --- */
+.main-content {
+    flex-grow: 1;
+    margin-left: 250px; /* Memberi ruang untuk sidebar */
+    padding: 30px;
+    background-color:cornsilk;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.content-header h1 {
+    color: #333;
+    margin: 0;
+}
+
+/* Styling Tombol Tambah */
+.btn-tambah {
+    background-color: #2C5747;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-tambah:hover {
+    background-color: #1e3d32;
+}
+
+/* Penyesuaian Tabel agar pas di layout baru */
+.admin-table {
+    width: 100%;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    overflow: hidden; /* Agar sudut melengkung terlihat */
+}
+
+.open-sidebar-btn, .close-sidebar-btn, .sidebar-overlay {
+    display: none;
+}
 .admin-table th, .admin-table td {
     padding: 14px 18px;
     text-align: left;
@@ -2257,5 +2380,89 @@ td.action-links .hapus-btn:hover { /* <-- Lebih spesifik */
         word-break: break-word;
         text-align: center;
         margin: 0;
+    }
+
+    /* 1. Sidebar: Sembunyikan ke kiri */
+    .sidebar {
+        left: -260px; /* Geser keluar layar */
+        transition: left 0.3s ease; /* Animasi halus */
+    }
+
+    /* Jika kelas 'active' ditambahkan (saat tombol diklik) */
+    .sidebar.active {
+        left: 0; /* Munculkan kembali */
+    }
+
+    /* Header Sidebar di Mobile */
+    .sidebar-header {
+        justify-content: space-between; /* Beri jarak antara Judul dan Tombol X */
+        padding-right: 20px;
+    }
+
+    /* 2. Konten Utama: Penuhi Lebar */
+    .main-content {
+        margin-left: 0; /* Hapus margin kiri */
+        width: 100%;    /* Lebar penuh */
+        padding: 20px;  /* Kurangi padding agar lebih lega */
+    }
+
+    /* 3. Tombol Buka Menu */
+    .open-sidebar-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #fff;
+        border: 1px solid #ddd;
+        padding: 8px 15px;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-bottom: 20px;
+        font-weight: bold;
+        color: #333;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    /* 4. Tombol Tutup Menu (X) */
+    .close-sidebar-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+
+    /* 5. Overlay Gelap */
+    .sidebar-overlay {
+        display: block;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.5);
+        z-index: 900; /* Di bawah sidebar, di atas konten */
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+    }
+    .sidebar-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* 6. Penyesuaian Tabel agar bisa discroll */
+    .table-container {
+        overflow-x: auto; /* Scroll samping jika tabel kepanjangan */
+    }
+    
+    /* Penyesuaian Header Konten */
+    .content-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    /* Tombol Tambah di Mobile */
+    .btn-tambah {
+        width: 100%;
+        justify-content: center;
     }
 }
